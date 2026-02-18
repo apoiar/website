@@ -10,17 +10,14 @@ import {
   WhatsAppButton,
 } from "@/components";
 import { getContent } from "@/config/content";
-import { DEFAULT_LOCALE, getLangTag, isLocale } from "@/config/i18n";
+import { getLangTag, type Locale } from "@/config/i18n";
 import { SITE_URL, getSiteMeta } from "@/config/site";
 
-type LocalePageProps = {
-  params: Promise<{ locale: string }>;
+type LocalizedHomePageProps = {
+  locale: Locale;
 };
 
-export default async function LocalePage({ params }: LocalePageProps) {
-  const { locale: localeParam } = await params;
-  const locale = isLocale(localeParam) ? localeParam : DEFAULT_LOCALE;
-
+export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
   const content = getContent(locale);
   const siteMeta = getSiteMeta(locale);
 

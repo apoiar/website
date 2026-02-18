@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { getContent } from "@/config/content";
-import { DEFAULT_LOCALE, LOCALES, isLocale } from "@/config/i18n";
+import type { Locale } from "@/config/i18n";
 import { SITE_URL, getSiteMeta } from "@/config/site";
 
-type LocaleLayoutProps = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
+const OPEN_GRAPH_IMAGE = "/assets/og-image.png";
 
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({ params }: LocaleLayoutProps): Promise<Metadata> {
-  const { locale: localeParam } = await params;
-  const locale = isLocale(localeParam) ? localeParam : DEFAULT_LOCALE;
+export function buildLocaleMetadata(locale: Locale): Metadata {
   const content = getContent(locale);
   const siteMeta = getSiteMeta(locale);
 
@@ -35,7 +25,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
       locale: siteMeta.openGraphLocale,
       images: [
         {
-          url: "/opengraph-image",
+          url: OPEN_GRAPH_IMAGE,
           width: 1200,
           height: 630,
           alt: siteMeta.ogAlt,
@@ -46,7 +36,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
       card: "summary_large_image",
       title: siteMeta.title,
       description: siteMeta.description,
-      images: ["/opengraph-image"],
+      images: [OPEN_GRAPH_IMAGE],
     },
     alternates: {
       canonical: `/${locale}`,
@@ -69,14 +59,4 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
       },
     },
   };
-}
-
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = await params;
-
-  if (!isLocale(locale)) {
-    redirect(`/${DEFAULT_LOCALE}`);
-  }
-
-  return children;
 }

@@ -1,0 +1,9 @@
+export { Footer } from "@/components/layout/footer";
+export { Navbar } from "@/components/layout/navbar";
+export { Apoio } from "@/components/sections/apoio";
+export { CTA } from "@/components/sections/cta";
+export { Hero } from "@/components/sections/hero";
+export { Mentoria } from "@/components/sections/mentoria";
+export { Resultados } from "@/components/sections/resultados";
+export { Testimonials } from "@/components/sections/testimonials";
+export { WhatsAppButton } from "@/components/ui/whatsapp-button";

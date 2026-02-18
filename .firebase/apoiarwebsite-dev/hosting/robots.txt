@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://apoiar.com.br/sitemap.xml

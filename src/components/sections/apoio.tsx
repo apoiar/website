@@ -1,25 +1,29 @@
 import Image from "next/image";
 import { Calculator, CalendarDays, FileText } from "lucide-react";
-import { APOIO_CONTENT } from "@/config/content";
+import type { ContentSchema } from "@/config/content";
 
 const cardIcons = [Calculator, CalendarDays, FileText] as const;
 
-export function Apoio() {
+type ApoioProps = {
+  content: ContentSchema["apoio"];
+};
+
+export function Apoio({ content }: ApoioProps) {
   return (
-    <section id={APOIO_CONTENT.sectionId} className="py-24 lg:py-32 bg-warm-50">
+    <section id={content.sectionId} className="py-24 lg:py-32 bg-warm-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
-            {APOIO_CONTENT.badge}
+            {content.badge}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-900 mt-4">
-            {APOIO_CONTENT.titlePrefix} <span className="gradient-text">{APOIO_CONTENT.titleHighlight}</span>
+            {content.titlePrefix} <span className="gradient-text">{content.titleHighlight}</span>
           </h2>
-          <p className="text-lg text-stone-600 mt-6 leading-relaxed">{APOIO_CONTENT.description}</p>
+          <p className="text-lg text-stone-600 mt-6 leading-relaxed">{content.description}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {APOIO_CONTENT.cards.map((card, index) => {
+          {content.cards.map((card, index) => {
             const Icon = cardIcons[index] ?? FileText;
 
             return (
@@ -37,15 +41,15 @@ export function Apoio() {
         <div className="mt-16 bg-white rounded-3xl p-8 lg:p-12 shadow-soft">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-warm-900 mb-4">{APOIO_CONTENT.highlight.title}</h3>
-              <p className="text-stone-600 leading-relaxed">{APOIO_CONTENT.highlight.description}</p>
+              <h3 className="text-2xl font-bold text-warm-900 mb-4">{content.highlight.title}</h3>
+              <p className="text-stone-600 leading-relaxed">{content.highlight.description}</p>
             </div>
             <div className="flex-shrink-0">
               <Image
-                src={APOIO_CONTENT.highlight.image.src}
-                alt={APOIO_CONTENT.highlight.image.alt}
-                width={APOIO_CONTENT.highlight.image.width}
-                height={APOIO_CONTENT.highlight.image.height}
+                src={content.highlight.image.src}
+                alt={content.highlight.image.alt}
+                width={content.highlight.image.width}
+                height={content.highlight.image.height}
                 className="rounded-2xl shadow-lg w-full lg:w-80 h-auto object-cover"
               />
             </div>

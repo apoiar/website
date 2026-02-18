@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+﻿/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 import apoiarLogo from "../../public/assets/APOIAR_sem_fundo.png";
 
 export const runtime = "edge";
 
-export const alt =
-  "APOIAR - Consultoria & BPO | Trabalhamos pela sua Qualidade de Vida";
+export const alt = "APOIAR - Consulting & BPO";
 export const size = {
   width: 1200,
   height: 630,
@@ -29,7 +28,6 @@ export default function OgImage() {
           overflow: "hidden",
         }}
       >
-        {/* Decorative circles */}
         <div
           style={{
             position: "absolute",
@@ -55,7 +53,6 @@ export default function OgImage() {
           }}
         />
 
-        {/* Logo */}
         <div
           style={{
             display: "flex",
@@ -75,7 +72,6 @@ export default function OgImage() {
           />
         </div>
 
-        {/* Title */}
         <div
           style={{
             color: "white",
@@ -88,10 +84,9 @@ export default function OgImage() {
             display: "flex",
           }}
         >
-          Trabalhamos pela sua Qualidade de Vida
+          Consulting & BPO
         </div>
 
-        {/* Subtitle */}
         <div
           style={{
             color: "rgba(255, 255, 255, 0.85)",
@@ -103,7 +98,7 @@ export default function OgImage() {
             display: "flex",
           }}
         >
-          Consultoria & BPO | Mentoria Personalizada para Empresários
+          Business mentorship and operations support
         </div>
       </div>
     ),

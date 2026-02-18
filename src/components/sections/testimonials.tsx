@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
-import { TESTIMONIALS_CONTENT } from "@/config/content";
+import type { ContentSchema } from "@/config/content";
 
 function Stars() {
   return (
@@ -12,22 +12,25 @@ function Stars() {
   );
 }
 
-export function Testimonials() {
+type TestimonialsProps = {
+  content: ContentSchema["testimonials"];
+};
+
+export function Testimonials({ content }: TestimonialsProps) {
   return (
     <section className="py-24 lg:py-32 bg-warm-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
-            {TESTIMONIALS_CONTENT.badge}
+            {content.badge}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-900 mt-4">
-            {TESTIMONIALS_CONTENT.titlePrefix}{" "}
-            <span className="gradient-text">{TESTIMONIALS_CONTENT.titleHighlight}</span>
+            {content.titlePrefix} <span className="gradient-text">{content.titleHighlight}</span>
           </h2>
         </div>
 
         <div className="grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TESTIMONIALS_CONTENT.items.map((testimonial, index) => (
+          {content.items.map((testimonial, index) => (
             <div
               key={`${testimonial.name}-${index}`}
               className={`bg-white rounded-3xl p-8 shadow-soft h-full flex flex-col${

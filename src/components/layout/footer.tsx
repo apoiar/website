@@ -1,20 +1,12 @@
 import Image from "next/image";
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
-import {
-  CONTACT,
-  BRAND,
-  FOOTER_LEGAL_LINKS,
-  FOOTER_QUICK_LINKS,
-  SOCIAL_LINKS,
-} from "@/config/content";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import type { ContentSchema } from "@/config/content";
 
-function SocialIcon({ id }: { id: (typeof SOCIAL_LINKS)[number]["id"] }) {
+type FooterProps = {
+  content: ContentSchema;
+};
+
+function SocialIcon({ id }: { id: ContentSchema["socialLinks"][number]["id"] }) {
   if (id === "linkedin") {
     return <Linkedin className="w-5 h-5" />;
   }
@@ -22,10 +14,12 @@ function SocialIcon({ id }: { id: (typeof SOCIAL_LINKS)[number]["id"] }) {
   return <Instagram className="w-5 h-5" />;
 }
 
-export function Footer() {
+export function Footer({ content }: FooterProps) {
+  const { brand, contact, footerLegalLinks, footerQuickLinks, socialLinks, ui } = content;
+
   return (
     <footer
-      id={CONTACT.sectionId}
+      id={contact.sectionId}
       className="relative bg-warm-900 text-white py-16 lg:py-20 before:content-[''] before:absolute before:left-0 before:right-0 before:-top-0.5 before:h-2 before:bg-warm-900 before:pointer-events-none"
       style={{ transform: "translateZ(0)" }}
     >
@@ -42,10 +36,10 @@ export function Footer() {
               />
             </div>
             <p className="text-stone-400 leading-relaxed mb-6 max-w-md">
-              {BRAND.footerDescription}
+              {brand.footerDescription}
             </p>
             <div className="flex gap-4">
-              {SOCIAL_LINKS.map((link) => (
+              {socialLinks.map((link) => (
                 <a
                   key={link.id}
                   href={link.href}
@@ -61,9 +55,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6">Links Rapidos</h4>
+            <h4 className="font-bold text-lg mb-6">{ui.footerQuickLinksTitle}</h4>
             <ul className="space-y-4">
-              {FOOTER_QUICK_LINKS.map((link) => (
+              {footerQuickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <a
                     href={link.href}
@@ -77,32 +71,32 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6">Contato</h4>
+            <h4 className="font-bold text-lg mb-6">{ui.footerContactTitle}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
                 <a
-                  href={CONTACT.mailtoUrl}
+                  href={contact.mailtoUrl}
                   className="text-stone-400 hover:text-white transition-colors"
                 >
-                  {CONTACT.email}
+                  {contact.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
                 <a
-                  href={CONTACT.whatsappUrl}
+                  href={contact.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-stone-400 hover:text-white transition-colors"
                 >
-                  WhatsApp
+                  {ui.whatsappText}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
                 <span className="text-stone-400">
-                  {CONTACT.city}, {CONTACT.country}
+                  {contact.city}, {contact.country}
                 </span>
               </li>
             </ul>
@@ -111,10 +105,10 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-stone-500 text-sm">
-            {new Date().getFullYear()} {BRAND.legalName}. Todos os direitos reservados.
+            {new Date().getFullYear()} {brand.legalName}. {ui.rightsReserved}
           </p>
           <div className="flex gap-6">
-            {FOOTER_LEGAL_LINKS.map((link) => (
+            {footerLegalLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}

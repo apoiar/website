@@ -1,27 +1,32 @@
 import Image from "next/image";
 import { Heart, MessageCircle, User, Video } from "lucide-react";
-import { MENTORIA_CONTENT } from "@/config/content";
+import type { ContentSchema } from "@/config/content";
 
 const pointIcons = [Video, MessageCircle, Heart] as const;
 
-export function Mentoria() {
+type MentoriaProps = {
+  content: ContentSchema["mentoria"];
+  mentorImageOverlay: string;
+};
+
+export function Mentoria({ content, mentorImageOverlay }: MentoriaProps) {
   return (
-    <section id={MENTORIA_CONTENT.sectionId} className="py-24 lg:py-32 bg-white">
+    <section id={content.sectionId} className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-soft">
                 <Image
-                  src={MENTORIA_CONTENT.mentor.image.src}
-                  alt={MENTORIA_CONTENT.mentor.image.alt}
-                  width={MENTORIA_CONTENT.mentor.image.width}
-                  height={MENTORIA_CONTENT.mentor.image.height}
+                  src={content.mentor.image.src}
+                  alt={content.mentor.image.alt}
+                  width={content.mentor.image.width}
+                  height={content.mentor.image.height}
                   className="w-full h-auto object-cover"
                 />
                 <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[190%] -translate-x-1/2 -translate-y-1/2 rotate-[48deg] bg-warm-900/85 py-20 text-center">
                   <span className="px-4 text-lg font-semibold uppercase tracking-[0.2em] text-white md:text-2xl">
-                    Sua foto
+                    {mentorImageOverlay}
                   </span>
                 </div>
               </div>
@@ -31,8 +36,8 @@ export function Mentoria() {
                     <User className="w-6 h-6 text-lime-600" />
                   </div>
                   <div>
-                    <p className="font-bold text-warm-900 text-lg">{MENTORIA_CONTENT.mentor.name}</p>
-                    <p className="text-stone-600">{MENTORIA_CONTENT.mentor.role}</p>
+                    <p className="font-bold text-warm-900 text-lg">{content.mentor.name}</p>
+                    <p className="text-stone-600">{content.mentor.role}</p>
                   </div>
                 </div>
               </div>
@@ -42,16 +47,15 @@ export function Mentoria() {
           <div className="order-1 lg:order-2 space-y-8">
             <div>
               <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
-                {MENTORIA_CONTENT.badge}
+                {content.badge}
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-900 mt-4 leading-tight">
-                {MENTORIA_CONTENT.titlePrefix}{" "}
-                <span className="gradient-text">{MENTORIA_CONTENT.titleHighlight}</span>
+                {content.titlePrefix} <span className="gradient-text">{content.titleHighlight}</span>
               </h2>
             </div>
-            <p className="text-lg text-stone-600 leading-relaxed">{MENTORIA_CONTENT.description}</p>
+            <p className="text-lg text-stone-600 leading-relaxed">{content.description}</p>
             <div className="space-y-6">
-              {MENTORIA_CONTENT.points.map((point, index) => {
+              {content.points.map((point, index) => {
                 const Icon = pointIcons[index] ?? MessageCircle;
 
                 return (

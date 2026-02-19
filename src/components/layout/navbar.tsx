@@ -37,8 +37,18 @@ export function Navbar({ content, locale }: NavbarProps) {
     setDesktopLanguageOpen(false);
     setMobileLanguageOpen(false);
 
-    const hash = typeof window !== "undefined" ? window.location.hash : "";
-    router.push(`/${nextLocale}${hash}`);
+    // Save current scroll position before navigation
+    const scrollPosition = typeof window !== "undefined" ? window.scrollY : 0;
+
+    // Navigate without hash
+    router.push(`/${nextLocale}`);
+
+    // Restore scroll position after navigation
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        window.scrollTo(0, scrollPosition);
+      }, 0);
+    }
   };
 
   useEffect(() => {
@@ -115,9 +125,8 @@ export function Navbar({ content, locale }: NavbarProps) {
                   className="h-[22px] w-[22px] rounded-full object-cover"
                 />
                 <ChevronDown
-                  className={`h-4 w-4 text-stone-500 transition-transform ${
-                    desktopLanguageOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 text-stone-500 transition-transform ${desktopLanguageOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {desktopLanguageOpen && (
@@ -134,11 +143,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                         type="button"
                         role="menuitem"
                         onClick={() => handleLocaleChange(optionLocale)}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                          isActive
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${isActive
                             ? "bg-lime-100 text-lime-700"
                             : "text-stone-700 hover:bg-stone-100 hover:text-lime-700"
-                        }`}
+                          }`}
                       >
                         <span className="inline-flex items-center gap-2">
                           <Image
@@ -212,9 +220,8 @@ export function Navbar({ content, locale }: NavbarProps) {
                   />
                 </span>
                 <ChevronDown
-                  className={`h-4 w-4 text-stone-500 transition-transform ${
-                    mobileLanguageOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 text-stone-500 transition-transform ${mobileLanguageOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               {mobileLanguageOpen && (
@@ -228,11 +235,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                         type="button"
                         role="menuitem"
                         onClick={() => handleLocaleChange(optionLocale)}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                          isActive
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${isActive
                             ? "bg-lime-100 text-lime-700"
                             : "text-stone-700 hover:bg-stone-100 hover:text-lime-700"
-                        }`}
+                          }`}
                       >
                         <span className="inline-flex items-center gap-2">
                           <Image

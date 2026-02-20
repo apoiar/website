@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import type { ContentSchema } from "@/config/content";
 
 type OuvidoriaFormContent = ContentSchema["ouvidoria"];
@@ -37,6 +37,8 @@ export function OuvidoriaForm({ content }: { content: OuvidoriaFormContent }) {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [typeError, setTypeError] = useState<string | null>(null);
+  const [company, setCompany] = useState("");
+  const startedAtRef = useRef<number>(Date.now());
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -86,6 +88,8 @@ export function OuvidoriaForm({ content }: { content: OuvidoriaFormContent }) {
           phone: trimmedPhone || undefined,
           type: form.type,
           message: trimmedMessage,
+          company,
+          startedAt: startedAtRef.current,
         }),
       });
 
@@ -191,6 +195,16 @@ export function OuvidoriaForm({ content }: { content: OuvidoriaFormContent }) {
           rows={6}
           required
           className="resize-none rounded-xl border border-stone-200 bg-stone-50/50 px-4 py-3 text-sm text-stone-800 outline-none transition focus:border-lime-500 focus:ring-4 focus:ring-lime-500/10"
+        />
+      </label>
+
+      <label className="hidden" aria-hidden="true">
+        Company
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(event) => setCompany(event.target.value)}
         />
       </label>
 

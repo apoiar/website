@@ -26,9 +26,9 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": `${SITE_URL}/${locale}/#organization`,
+        "@id": `${SITE_URL}/#organization`,
         name: content.brand.legalName,
-        url: `${SITE_URL}/${locale}`,
+        url: `${SITE_URL}/`,
         logo: {
           "@type": "ImageObject",
           url: `${SITE_URL}/assets/APOIAR_sem_fundo.png`,
@@ -43,10 +43,10 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
       },
       {
         "@type": "LocalBusiness",
-        "@id": `${SITE_URL}/${locale}/#localbusiness`,
+        "@id": `${SITE_URL}/#localbusiness`,
         name: content.brand.legalName,
         description: siteMeta.localBusinessDescription,
-        url: `${SITE_URL}/${locale}`,
+        url: `${SITE_URL}/`,
         email: content.contact.email,
         address: {
           "@type": "PostalAddress",
@@ -59,25 +59,25 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
       },
       {
         "@type": "WebSite",
-        "@id": `${SITE_URL}/${locale}/#website`,
-        url: `${SITE_URL}/${locale}`,
+        "@id": `${SITE_URL}/#website`,
+        url: `${SITE_URL}/`,
         name: siteMeta.siteName,
         description: siteMeta.websiteDescription,
         publisher: {
-          "@id": `${SITE_URL}/${locale}/#organization`,
+          "@id": `${SITE_URL}/#organization`,
         },
         inLanguage: getLangTag(locale),
       },
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/${locale}/#webpage`,
-        url: `${SITE_URL}/${locale}`,
+        "@id": `${SITE_URL}/#webpage`,
+        url: `${SITE_URL}/`,
         name: siteMeta.title,
         isPartOf: {
-          "@id": `${SITE_URL}/${locale}/#website`,
+          "@id": `${SITE_URL}/#website`,
         },
         about: {
-          "@id": `${SITE_URL}/${locale}/#organization`,
+          "@id": `${SITE_URL}/#organization`,
         },
         description: siteMeta.description,
         inLanguage: getLangTag(locale),
@@ -94,7 +94,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
       <div className="min-h-screen bg-warm-50 font-sans">
         <Navbar content={content} locale={locale} />
         <Hero content={content.hero} />
-        <Mentoria content={content.mentoria} mentorImageOverlay={content.ui.mentorImageOverlay} />
+        <Mentoria content={content.mentoria} />
         <Apoio content={content.apoio} />
         <Resultados content={content.resultados} />
         <Testimonials content={content.testimonials} />

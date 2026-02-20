@@ -65,7 +65,7 @@ export function Hero({ content }: HeroProps) {
           </div>
 
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200/60">
               <Image
                 src={content.mainImage.src}
                 alt={content.mainImage.alt}
@@ -77,7 +77,7 @@ export function Hero({ content }: HeroProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-soft p-6 max-w-xs hidden lg:block">
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-soft p-6 max-w-xs hidden lg:block border border-stone-200/60">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-lime-100 rounded-xl flex items-center justify-center">
                   <TrendingUp className="w-6 h-6 text-lime-600" />

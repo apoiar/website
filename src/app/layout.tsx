@@ -2,6 +2,7 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@/lib/analytics/google-analytics";
 import { SITE_URL } from "@/config/site";
+import { CookieBanner } from "@/components/ui/cookie-banner";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${plusJakartaSans.variable} antialiased`}>
         <GoogleAnalytics />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

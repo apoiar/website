@@ -6,17 +6,16 @@ const pointIcons = [Video, MessageCircle, Heart] as const;
 
 type MentoriaProps = {
   content: ContentSchema["mentoria"];
-  mentorImageOverlay: string;
 };
 
-export function Mentoria({ content, mentorImageOverlay }: MentoriaProps) {
+export function Mentoria({ content }: MentoriaProps) {
   return (
     <section id={content.sectionId} className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-soft">
+              <div className="relative rounded-3xl overflow-hidden shadow-soft border border-stone-200/60">
                 <Image
                   src={content.mentor.image.src}
                   alt={content.mentor.image.alt}
@@ -24,13 +23,8 @@ export function Mentoria({ content, mentorImageOverlay }: MentoriaProps) {
                   height={content.mentor.image.height}
                   className="w-full h-auto object-cover"
                 />
-                <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[190%] -translate-x-1/2 -translate-y-1/2 rotate-[48deg] bg-warm-900/85 py-20 text-center">
-                  <span className="px-4 text-lg font-semibold uppercase tracking-[0.2em] text-white md:text-2xl">
-                    {mentorImageOverlay}
-                  </span>
-                </div>
               </div>
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-stone-200/60">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-lime-100 rounded-full flex items-center justify-center">
                     <User className="w-6 h-6 text-lime-600" />

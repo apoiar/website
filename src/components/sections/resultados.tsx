@@ -25,7 +25,7 @@ export function Resultados({ content }: ResultadosProps) {
             <div className="absolute -top-4 left-8 bg-stone-200 text-stone-600 px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider">
               {content.beforeLabel}
             </div>
-            <div className="bg-stone-100 rounded-3xl p-8 pt-12 h-full flex flex-col">
+            <div className="bg-stone-100 rounded-3xl p-8 pt-12 h-full flex flex-col border border-stone-200/80 shadow-sm">
               <div className="space-y-6">
                 {content.beforeItems.map((item) => (
                   <div key={item.title} className="flex items-start gap-4 min-h-[76px]">
@@ -55,7 +55,7 @@ export function Resultados({ content }: ResultadosProps) {
             <div className="absolute -top-4 left-8 bg-lime-500 text-white px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider">
               {content.afterLabel}
             </div>
-            <div className="bg-lime-50 rounded-3xl p-8 pt-12 h-full ring-2 ring-lime-100 flex flex-col">
+            <div className="bg-lime-50 rounded-3xl p-8 pt-12 h-full border-[1.5px] border-lime-200 shadow-sm flex flex-col">
               <div className="space-y-6">
                 {content.afterItems.map((item) => (
                   <div key={item.title} className="flex items-start gap-4 min-h-[76px]">

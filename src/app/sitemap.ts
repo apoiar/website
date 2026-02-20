@@ -1,17 +1,13 @@
 import type { MetadataRoute } from "next";
-import { LOCALES } from "@/config/i18n";
 import { SITE_URL } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = Object.fromEntries(LOCALES.map((locale) => [locale, `${SITE_URL}/${locale}`]));
+  const routes = ["/", "/politica-de-privacidade", "/termos-de-uso"];
 
-  return LOCALES.map((locale) => ({
-    url: `${SITE_URL}/${locale}`,
+  return routes.map((route) => ({
+    url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: locale === "pt" ? 1 : 0.8,
-    alternates: {
-      languages: locales,
-    },
+    priority: route === "/" ? 1 : 0.6,
   }));
 }

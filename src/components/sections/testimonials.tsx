@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useState } from "react";
 import type { ContentSchema } from "@/config/content";
 
 function Stars() {
@@ -17,8 +22,40 @@ type TestimonialsProps = {
 };
 
 export function Testimonials({ content }: TestimonialsProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [
+    Autoplay({ delay: 5000, stopOnInteraction: true }),
+  ]);
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+  const onInit = useCallback((emblaApi: any) => {
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, []);
+
+  const onSelect = useCallback((emblaApi: any) => {
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    onInit(emblaApi);
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onInit);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onInit, onSelect]);
+
   return (
-    <section className="py-24 lg:py-32 bg-warm-50">
+    <section className="py-24 lg:py-32 bg-warm-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
@@ -29,35 +66,62 @@ export function Testimonials({ content }: TestimonialsProps) {
           </h2>
         </div>
 
-        <div className="grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {content.items.map((testimonial, index) => (
-            <div
-              key={`${testimonial.name}-${index}`}
-              className={`bg-white rounded-3xl p-8 shadow-soft h-full flex flex-col${
-                index === 2 ? " md:col-span-2 lg:col-span-1" : ""
-              }`}
-            >
-              <Stars />
-              <p className="text-stone-600 leading-relaxed mb-6">&ldquo;{testimonial.quote}&rdquo;</p>
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full bg-stone-200 overflow-hidden">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-cover"
-                  />
+        <div className="relative max-w-6xl mx-auto px-4 md:px-16 lg:px-20">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex -ml-6">
+              {content.items.map((testimonial, index) => (
+                <div
+                  key={`${testimonial.name}-${index}`}
+                  className="flex-[0_0_100%] min-w-0 pl-6 lg:flex-[0_0_50%]"
+                >
+                  <div className="bg-white rounded-3xl p-8 shadow-soft h-full flex flex-col border border-stone-200/60 transition-transform duration-300">
+                    <Stars />
+                    <p className="text-stone-600 leading-relaxed mb-6 flex-grow">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-4 mt-auto">
+                      <div className="hidden"></div>
+                      <div>
+                        <p className="font-bold text-warm-900">{testimonial.name}</p>
+                        <p className="text-sm text-stone-500">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-warm-900">{testimonial.name}</p>
-                  <p className="text-sm text-stone-500">{testimonial.role}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button
+            className="absolute left-0 md:left-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-lime-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            className="absolute right-0 md:right-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-lime-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-12">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all ${index === selectedIndex ? "bg-lime-600 w-6" : "bg-stone-300 hover:bg-lime-400"
+                  }`}
+                onClick={() => scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

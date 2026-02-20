@@ -17,6 +17,13 @@ function SocialIcon({ id }: { id: ContentSchema["socialLinks"][number]["id"] }) 
 export function Footer({ content }: FooterProps) {
   const { brand, contact, footerLegalLinks, footerQuickLinks, socialLinks, ui } = content;
 
+  const formatLink = (href: string) => {
+    if (href.startsWith("http") || href.startsWith("mailto")) return href;
+    if (href === "#") return href;
+    if (href.startsWith("#")) return `/${href}`;
+    return href.startsWith("/") ? href : `/${href}`;
+  };
+
   return (
     <footer
       id={contact.sectionId}
@@ -30,9 +37,9 @@ export function Footer({ content }: FooterProps) {
               <Image
                 src="/assets/APOIAR_sem_fundo.png"
                 alt="APOIAR"
-                width={220}
-                height={58}
-                className="h-12 w-auto"
+                width={250}
+                height={66}
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-stone-400 leading-relaxed mb-6 max-w-md">
@@ -60,7 +67,7 @@ export function Footer({ content }: FooterProps) {
               {footerQuickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <a
-                    href={link.href}
+                    href={formatLink(link.href)}
                     className="text-stone-400 hover:text-lime-400 transition-colors"
                   >
                     {link.label}
@@ -93,10 +100,15 @@ export function Footer({ content }: FooterProps) {
                   {ui.whatsappText}
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
-                <span className="text-stone-400">
-                  {contact.city}, {contact.country}
+              <li className="flex flex-col gap-1">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-stone-400">
+                    {ui.footerLocationLabel}
+                  </span>
+                </div>
+                <span className="text-stone-500 text-sm ml-8">
+                  {ui.footerCoverageLabel}
                 </span>
               </li>
             </ul>
@@ -104,14 +116,17 @@ export function Footer({ content }: FooterProps) {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-stone-500 text-sm">
-            {new Date().getFullYear()} {brand.legalName}. {ui.rightsReserved}
-          </p>
+          <div className="text-stone-500 text-sm text-center md:text-left">
+            <p className="mb-1">
+              {new Date().getFullYear()} {brand.legalName}. {ui.rightsReserved}
+            </p>
+            <p>APOIAR — CNPJ: 57.456.210/0001-06</p>
+          </div>
           <div className="flex gap-6">
             {footerLegalLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={formatLink(link.href)}
                 className="text-stone-500 hover:text-white text-sm transition-colors"
               >
                 {link.label}

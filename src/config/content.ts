@@ -3,6 +3,11 @@
 type LinkItem = {
   href: string;
   label: string;
+  subItems?: Array<{
+    label: string;
+    href: string;
+    group?: string;
+  }>;
 };
 
 type SocialLink = {
@@ -40,10 +45,11 @@ export type ContentSchema = {
     languageLabel: string;
     footerQuickLinksTitle: string;
     footerContactTitle: string;
+    footerLocationLabel: string;
+    footerCoverageLabel: string;
     whatsappText: string;
     rightsReserved: string;
     whatsappAriaLabel: string;
-    mentorImageOverlay: string;
     languageOptions: Record<Locale, string>;
   };
   navLinks: LinkItem[];
@@ -125,7 +131,7 @@ export type ContentSchema = {
       quote: string;
       name: string;
       role: string;
-      image: string;
+      image?: string;
     }>;
   };
   cta: {
@@ -163,7 +169,7 @@ const BASE_IMAGES = {
     height: 600,
   },
   mentor: {
-    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop&crop=face",
+    src: "/assets/RicardoFurtado.jpeg",
     width: 600,
     height: 750,
   },
@@ -199,10 +205,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Links Rapidos",
       footerContactTitle: "Contato",
+      footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
+      footerCoverageLabel: "Sede no Rio de Janeiro com atendimento em todo o Brasil (online).",
       whatsappText: "WhatsApp",
       rightsReserved: "Todos os direitos reservados.",
       whatsappAriaLabel: "Falar no WhatsApp",
-      mentorImageOverlay: "Sua foto",
       languageOptions: {
         pt: "PT",
         en: "EN",
@@ -210,8 +217,23 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
     },
     navLinks: [
-      { href: "#mentoria", label: "Mentoria" },
-      { href: "#apoio", label: "Apoio no Dia a Dia" },
+      {
+        href: "/",
+        label: "Portfólio",
+        subItems: [
+          { group: "BPO", label: "Módulo de Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
+          { group: "BPO", label: "Módulo de Atendimento: Central de relacionamento online", href: "#apoio" },
+          { group: "BPO", label: "Módulo Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
+          { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#" },
+          { group: "Apoio ao MEI", label: "Emissão de Notas Fiscais", href: "#" },
+          { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#" },
+          { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#" },
+          { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#" },
+          { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#mentoria" },
+          { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#" },
+          { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#" },
+        ]
+      },
       { href: "#resultados", label: "Resultados" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contato" },
     ],
@@ -223,8 +245,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       { href: "#", label: "Sobre Nos" },
     ],
     footerLegalLinks: [
-      { href: "#", label: "Politica de Privacidade" },
-      { href: "#", label: "Termos de Uso" },
+      { href: "/politica-de-privacidade", label: "Politica de Privacidade" },
+      { href: "/termos-de-uso", label: "Termos de Uso" },
     ],
     hero: {
       badge: "Consultoria & BPO",
@@ -298,22 +320,27 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Apoio no",
       titleHighlight: "Dia a Dia",
       description:
-        "Deixe as tarefas chatas com a gente. Cuidamos de tudo para que voce nao precise se preocupar com a gestao operacional.",
+        "Deixe as tarefas operacionais com a gente. Cuidamos de tudo para que voce nao precise se preocupar com a gestao operacional.",
       cards: [
         {
-          title: "Gestao Financeira",
+          title: "Escalas de trabalho",
           description:
-            "Controle de contas a pagar e receber, conciliacao bancaria, fluxo de caixa e relatorios financeiros claros e objetivos.",
-        },
-        {
-          title: "Escalas e RH",
-          description:
-            "Organizacao de escalas de trabalho, controle de ponto, folha de pagamento e toda a gestao de pessoas sem complicacao.",
+            "Organizacao de escalas de trabalho e controle de ponto para que voce nao precise se preocupar com atrasos e faltas.",
         },
         {
           title: "Administrativo",
           description:
             "Documentacao, compliance, compras, fornecedores e toda a burocracia que tira seu tempo do que realmente importa.",
+        },
+        {
+          title: "Atendimento",
+          description:
+            "Central de relacionamento online todos os dias para garantir que seus clientes sejam sempre bem atendidos.",
+        },
+        {
+          title: "Comercial",
+          description:
+            "Escale suas vendas com nossos especialistas e converta mais leads em clientes reais.",
         },
       ],
       highlight: {
@@ -377,29 +404,45 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "parceiros",
       items: [
         {
-          quote:
-            "A APOIAR transformou minha relacao com o trabalho. Hoje tenho tempo para minha familia e meu negocio nunca funcionou tao bem.",
-          name: "Ana Paula",
-          role: "Franqueada, Sao Paulo",
-          image:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+          quote: "Atendimento rápido e eficaz. Profissionais extremamente qualificados 🙏",
+          name: "Wesley Alcântara Gaiola",
+          role: "Ribeirão Preto - SP",
         },
         {
-          quote:
-            "O suporte via WhatsApp e um diferencial enorme. Sempre que tenho uma duvida, recebo resposta rapida e eficiente.",
-          name: "Carlos Eduardo",
-          role: "Empresario, Rio de Janeiro",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+          quote: "Empresa séria, que visa ajudar na organização e no crescimento sustentável dos seus clientes! Ter a Apoiar como parceira de negócios, nos ajuda muito em nosso dia a dia. Altamente recomendado!",
+          name: "Ademir Morgado - Empresário",
+          role: "Santo André - SP",
         },
         {
-          quote:
-            "Ricardo tem uma didatica incrivel. Conseguiu organizar minha operacao de forma que eu nunca imaginei ser possivel.",
-          name: "Mariana Costa",
-          role: "Empresaria, Belo Horizonte",
-          image:
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+          quote: "Precisei dos serviços da Apoiar e os profissionais foram muito qualificados e só tenho elogios para esta empresa 🙌🏻🙏🏼",
+          name: "Kelly Ceccon - Empresária",
+          role: "São Paulo - SP",
         },
+        {
+          quote: "Mais do que um apoio, o time da Apoiar chegou para agregar valor ao meu negócio. Cuidam com o mesmo carinho e atenção que eu. Parceria apertadíssima e muito competente!",
+          name: "Simone Morgado - Administradora",
+          role: "São Paulo - SP",
+        },
+        {
+          quote: "A Apoiar é excelente, ela entrega o que promete! É satisfatório trabalhar com a empresa e com a equipe da Apoiar, super recomendo!!",
+          name: "Tainah Bento - Psicóloga e Empresária",
+          role: "Cascavel - PR",
+        },
+        {
+          quote: "Ricardo chegou no momento mais desafiador da minha trajetória empresarial e esteve presente em cada passo da reconstrução. A mentoria virou uma chave: trouxe direção quando faltava clareza, e a APOIAR organizou minha operação a ponto de eu voltar a crescer com estratégia e qualidade de vida.",
+          name: "Priscilla Filgueiras - Empresária",
+          role: "Londrina - PR",
+        },
+        {
+          quote: "A consultoria que recebi da Apoiar foi fundamental para aprimorar estratégias operacionais, comerciais e de marketing para a minha unidade. Com o apoio deles, consegui expandir significativamente o alcance e a aquisição de novos clientes. É um parceiro indispensável para o sucesso e crescimento do nosso negócio.",
+          name: "Artur Costa - Empresária",
+          role: "Maricá - RJ",
+        },
+        {
+          quote: "Profissionalismo e competência. Uma empresa que pensou e se preparou para apoiar empresários em seus principais gaps.",
+          name: "Wellington Neto - Empresário",
+          role: "Ponta Grossa - PR",
+        }
       ],
     },
     cta: {
@@ -424,10 +467,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Language",
       footerQuickLinksTitle: "Quick Links",
       footerContactTitle: "Contact",
+      footerLocationLabel: "Rio de Janeiro, RJ - Brazil",
+      footerCoverageLabel: "Headquartered in Rio de Janeiro serving all Brazil (online).",
       whatsappText: "WhatsApp",
       rightsReserved: "All rights reserved.",
       whatsappAriaLabel: "Chat on WhatsApp",
-      mentorImageOverlay: "Your photo",
       languageOptions: {
         pt: "PT",
         en: "EN",
@@ -435,8 +479,23 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
     },
     navLinks: [
-      { href: "#mentoria", label: "Mentorship" },
-      { href: "#apoio", label: "Daily Operations Support" },
+      {
+        href: "/",
+        label: "Portfolio",
+        subItems: [
+          { group: "BPO", label: "Support Module", href: "#apoio" },
+          { group: "BPO", label: "Customer Service Module", href: "#apoio" },
+          { group: "BPO", label: "Commercial Module", href: "#apoio" },
+          { group: "MEI Support", label: "Company Opening", href: "#" },
+          { group: "MEI Support", label: "Invoice Issuance", href: "#" },
+          { group: "MEI Support", label: "DAS Issuance", href: "#" },
+          { group: "MEI Support", label: "Annual Declaration", href: "#" },
+          { group: "MEI Support", label: "Company Closure", href: "#" },
+          { group: "Mentorship", label: "Business Mentorship", href: "#mentoria" },
+          { group: "Technology", label: "App Atender", href: "#" },
+          { group: "Technology", label: "App Kito", href: "#" },
+        ]
+      },
       { href: "#resultados", label: "Results" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contact" },
     ],
@@ -448,8 +507,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       { href: "#", label: "About Us" },
     ],
     footerLegalLinks: [
-      { href: "#", label: "Privacy Policy" },
-      { href: "#", label: "Terms of Use" },
+      { href: "/politica-de-privacidade", label: "Privacy Policy" },
+      { href: "/termos-de-uso", label: "Terms of Use" },
     ],
     hero: {
       badge: "Consulting & BPO",
@@ -523,22 +582,27 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Support in your",
       titleHighlight: "Daily Routine",
       description:
-        "Let us take care of the tedious tasks. We handle operations so you can stop worrying about day-to-day management.",
+        "Let us take care of the operational tasks. We handle operations so you can stop worrying about day-to-day management.",
       cards: [
         {
-          title: "Financial Management",
+          title: "Work Schedules",
           description:
-            "Control accounts payable and receivable, bank reconciliation, cash flow, and clear financial reports.",
-        },
-        {
-          title: "Scheduling and HR",
-          description:
-            "Work schedules, attendance tracking, payroll, and people management without unnecessary complexity.",
+            "Work schedules and attendance tracking so you do not have to worry about delays and absences.",
         },
         {
           title: "Administrative",
           description:
             "Documentation, compliance, procurement, vendors, and all bureaucracy that takes your time away from growth.",
+        },
+        {
+          title: "Customer Service",
+          description:
+            "Online relationship center every day to ensure your customers are always well taken care of.",
+        },
+        {
+          title: "Commercial",
+          description:
+            "Scale your sales with our experts and convert more leads into real customers.",
         },
       ],
       highlight: {
@@ -602,29 +666,46 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "partners say",
       items: [
         {
-          quote:
-            "APOIAR transformed my relationship with work. I now have time for my family and my business has never run this well.",
-          name: "Ana Paula",
-          role: "Franchise Owner, Sao Paulo",
-          image:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+          quote: "Fast and effective service. Extremely qualified professionals.",
+          name: "Wesley Alcântara Gaiola",
+          role: "Business Owner - Ribeirao Preto, SP",
         },
         {
-          quote:
-            "WhatsApp support is a huge differentiator. Whenever I have a question, I get a quick and effective answer.",
-          name: "Carlos Eduardo",
-          role: "Business Owner, Rio de Janeiro",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+          quote: "A serious company focused on helping clients with organization and sustainable growth. Having Apoiar as a business partner helps us a lot in our day-to-day operation. Highly recommended.",
+          name: "Ademir Morgado - Business Owner",
+          role: "Santo Andre, SP",
         },
         {
-          quote:
-            "Ricardo has an incredible teaching style. He organized my operation in a way I never thought possible.",
-          name: "Mariana Costa",
-          role: "Entrepreneur, Belo Horizonte",
-          image:
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+          quote: "I needed Apoiar's services and the professionals were highly qualified. I only have positive feedback about this company.",
+          name: "Kelly Ceccon - Business Owner",
+          role: "Sao Paulo, SP",
         },
+        {
+          quote: "More than support, Apoiar's team added real value to my business. They care with the same attention and dedication I do. A close and highly competent partnership.",
+          name: "Simone Morgado - Administrator",
+          role: "Sao Paulo, SP",
+        },
+        {
+          quote: "Apoiar is excellent and delivers what it promises. It is very satisfying to work with the company and team. I strongly recommend it.",
+          name: "Tainah Bento - Psychologist and Business Owner",
+          role: "Cascavel, PR",
+        },
+        {
+          quote: "Ricardo arrived at the most challenging moment of my entrepreneurial journey and was present at every step of rebuilding. Mentorship changed everything: it brought direction when I lacked clarity, and APOIAR organized my operation so I could grow again with strategy and quality of life.",
+          name: "Priscilla Filgueiras - Business Owner",
+          role: "Londrina, PR",
+        },
+        {
+          quote: "The consulting I received from Apoiar was essential to improve operational, commercial, and marketing strategies for my unit. With their support, I significantly expanded reach and new client acquisition. They are an indispensable partner for business success and growth.",
+          name: "Artur Costa - Business Owner",
+          role: "Marica, RJ",
+        },
+        {
+          quote: "Professionalism and competence. A company that prepared itself to support business owners in their main gaps.",
+          name: "Wellington Neto - Business Owner",
+          role: "Ponta Grossa, PR",
+        }
+
       ],
     },
     cta: {
@@ -649,10 +730,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Enlaces Rapidos",
       footerContactTitle: "Contacto",
+      footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
+      footerCoverageLabel: "Sede en Rio de Janeiro con atencion en todo Brasil (en linea).",
       whatsappText: "WhatsApp",
       rightsReserved: "Todos los derechos reservados.",
       whatsappAriaLabel: "Hablar por WhatsApp",
-      mentorImageOverlay: "Tu foto",
       languageOptions: {
         pt: "PT",
         en: "EN",
@@ -660,8 +742,23 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
     },
     navLinks: [
-      { href: "#mentoria", label: "Mentoria" },
-      { href: "#apoio", label: "Apoyo Diario" },
+      {
+        href: "/",
+        label: "Portafolio",
+        subItems: [
+          { group: "BPO", label: "Módulo de Apoyo", href: "#apoio" },
+          { group: "BPO", label: "Módulo de Atención", href: "#apoio" },
+          { group: "BPO", label: "Módulo Comercial", href: "#apoio" },
+          { group: "Apoyo MEI", label: "Apertura de Empresa", href: "#" },
+          { group: "Apoyo MEI", label: "Emisión de Facturas", href: "#" },
+          { group: "Apoyo MEI", label: "Emisión de DAS", href: "#" },
+          { group: "Apoyo MEI", label: "Declaración Anual", href: "#" },
+          { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#" },
+          { group: "Mentoría", label: "Mentoría Empresarial", href: "#mentoria" },
+          { group: "Tecnología", label: "App Atender", href: "#" },
+          { group: "Tecnología", label: "App Kito", href: "#" },
+        ]
+      },
       { href: "#resultados", label: "Resultados" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contacto" },
     ],
@@ -673,8 +770,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       { href: "#", label: "Sobre Nosotros" },
     ],
     footerLegalLinks: [
-      { href: "#", label: "Politica de Privacidad" },
-      { href: "#", label: "Terminos de Uso" },
+      { href: "/politica-de-privacidade", label: "Politica de Privacidad" },
+      { href: "/termos-de-uso", label: "Terminos de Uso" },
     ],
     hero: {
       badge: "Consultoria & BPO",
@@ -748,22 +845,27 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Apoyo en el",
       titleHighlight: "Dia a Dia",
       description:
-        "Deja las tareas tediosas con nosotros. Nos ocupamos de todo para que no tengas que preocuparte por la gestion operativa.",
+        "Deja las tareas operativas con nosotros. Nos ocupamos de todo para que no tengas que preocuparte por la gestion operativa.",
       cards: [
         {
-          title: "Gestion Financiera",
+          title: "Horarios de Trabajo",
           description:
-            "Control de cuentas por pagar y cobrar, conciliacion bancaria, flujo de caja e informes financieros claros.",
-        },
-        {
-          title: "Turnos y RRHH",
-          description:
-            "Organizacion de turnos, control de asistencia, nomina y gestion de personas sin complicaciones.",
+            "Organizacion de horarios y control de asistencia para que no tengas que preocuparte por retrasos y ausencias.",
         },
         {
           title: "Administrativo",
           description:
             "Documentacion, compliance, compras, proveedores y toda la burocracia que te quita tiempo.",
+        },
+        {
+          title: "Atención al Cliente",
+          description:
+            "Centro de relaciones online todos los días para garantizar que sus clientes siempre estén bien atendidos.",
+        },
+        {
+          title: "Comercial",
+          description:
+            "Escale sus ventas con nuestros especialistas y convierta más clientes potenciales en clientes reales.",
         },
       ],
       highlight: {
@@ -827,29 +929,45 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "socios",
       items: [
         {
-          quote:
-            "APOIAR transformo mi relacion con el trabajo. Hoy tengo tiempo para mi familia y mi negocio nunca funciono tan bien.",
-          name: "Ana Paula",
-          role: "Franquiciada, Sao Paulo",
-          image:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+          quote: "Atencion rapida y eficaz. Profesionales extremadamente calificados.",
+          name: "Wesley Alcântara Gaiola",
+          role: "Empresario - Ribeirao Preto, SP",
         },
         {
-          quote:
-            "El soporte por WhatsApp es un diferencial enorme. Siempre que tengo una duda, recibo respuesta rapida y eficiente.",
-          name: "Carlos Eduardo",
-          role: "Empresario, Rio de Janeiro",
-          image:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+          quote: "Empresa seria que ayuda en la organizacion y el crecimiento sostenible de sus clientes. Tener a Apoiar como socio de negocios nos ayuda mucho en el dia a dia. Altamente recomendado.",
+          name: "Ademir Morgado - Empresario",
+          role: "Santo Andre, SP",
         },
         {
-          quote:
-            "Ricardo tiene una didactica increible. Organizo mi operacion de una forma que nunca imagine posible.",
-          name: "Mariana Costa",
-          role: "Empresaria, Belo Horizonte",
-          image:
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+          quote: "Necesite los servicios de Apoiar y los profesionales fueron muy calificados. Solo tengo elogios para esta empresa.",
+          name: "Kelly Ceccon - Empresaria",
+          role: "Sao Paulo, SP",
         },
+        {
+          quote: "Mas que apoyo, el equipo de Apoiar agrego valor real a mi negocio. Cuidan con la misma atencion y dedicacion que yo. Una alianza cercana y muy competente.",
+          name: "Simone Morgado - Administradora",
+          role: "Sao Paulo, SP",
+        },
+        {
+          quote: "Apoiar es excelente y cumple lo que promete. Es muy satisfactorio trabajar con la empresa y su equipo. La recomiendo totalmente.",
+          name: "Tainah Bento - Psicologa y Empresaria",
+          role: "Cascavel, PR",
+        },
+        {
+          quote: "Ricardo llego en el momento mas desafiante de mi trayectoria empresarial y estuvo presente en cada paso de la reconstruccion. La mentoria fue un punto de cambio: trajo direccion cuando faltaba claridad, y APOIAR organizo mi operacion para volver a crecer con estrategia y calidad de vida.",
+          name: "Priscilla Filgueiras - Empresaria",
+          role: "Londrina, PR",
+        },
+        {
+          quote: "La consultoria que recibi de Apoiar fue clave para mejorar estrategias operativas, comerciales y de marketing de mi unidad. Con su apoyo, amplie significativamente el alcance y la adquisicion de nuevos clientes. Es un socio indispensable para el exito y crecimiento del negocio.",
+          name: "Artur Costa - Empresaria",
+          role: "Marica, RJ",
+        },
+        {
+          quote: "Profesionalismo y competencia. Una empresa que se preparo para apoyar a empresarios en sus principales brechas.",
+          name: "Wellington Neto - Empresario",
+          role: "Ponta Grossa, PR",
+        }
       ],
     },
     cta: {

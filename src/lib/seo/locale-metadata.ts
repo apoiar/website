@@ -19,7 +19,7 @@ export function buildLocaleMetadata(locale: Locale): Metadata {
     openGraph: {
       title: siteMeta.title,
       description: siteMeta.description,
-      url: `${SITE_URL}/${locale}`,
+      url: `${SITE_URL}/`,
       siteName: siteMeta.siteName,
       type: "website",
       locale: siteMeta.openGraphLocale,
@@ -39,13 +39,7 @@ export function buildLocaleMetadata(locale: Locale): Metadata {
       images: [OPEN_GRAPH_IMAGE],
     },
     alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        "pt-BR": "/pt",
-        en: "/en",
-        es: "/es",
-        "x-default": "/pt",
-      },
+      canonical: "/",
     },
     robots: {
       index: true,

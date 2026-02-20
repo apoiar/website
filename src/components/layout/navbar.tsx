@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import type { ContentSchema } from "@/config/content";
@@ -117,12 +118,12 @@ export function Navbar({ content, locale }: NavbarProps) {
     return portfolioGroups.findIndex((group) => group.key === activeGroup.key);
   }, [portfolioGroups, activeGroup]);
 
-  const resetPortfolioSafetyTracking = () => {
+  const resetPortfolioSafetyTracking = useCallback(() => {
     safetyOriginRef.current = null;
     triangleProtectionActiveRef.current = false;
-  };
+  }, []);
 
-  const clearPortfolioCloseTimeout = (options?: { keepSafetyTracking?: boolean }) => {
+  const clearPortfolioCloseTimeout = useCallback((options?: { keepSafetyTracking?: boolean }) => {
     if (closePortfolioTimeoutRef.current) {
       clearTimeout(closePortfolioTimeoutRef.current);
       closePortfolioTimeoutRef.current = null;
@@ -131,12 +132,12 @@ export function Navbar({ content, locale }: NavbarProps) {
     if (!options?.keepSafetyTracking) {
       resetPortfolioSafetyTracking();
     }
-  };
+  }, [resetPortfolioSafetyTracking]);
 
-  const closePortfolio = () => {
+  const closePortfolio = useCallback(() => {
     clearPortfolioCloseTimeout();
     setIsPortfolioOpen(false);
-  };
+  }, [clearPortfolioCloseTimeout]);
 
   const openPortfolio = () => {
     clearPortfolioCloseTimeout();
@@ -147,7 +148,7 @@ export function Navbar({ content, locale }: NavbarProps) {
     }
   };
 
-  const schedulePortfolioClose = (origin?: Point) => {
+  const schedulePortfolioClose = useCallback((origin?: Point) => {
     clearPortfolioCloseTimeout({ keepSafetyTracking: true });
 
     if (origin) {
@@ -162,7 +163,7 @@ export function Navbar({ content, locale }: NavbarProps) {
       resetPortfolioSafetyTracking();
       closePortfolioTimeoutRef.current = null;
     }, PORTFOLIO_CLOSE_DELAY_MS);
-  };
+  }, [clearPortfolioCloseTimeout, resetPortfolioSafetyTracking]);
 
   const handleLocaleChange = (nextLocale: Locale) => {
     persistLocaleCookie(nextLocale);
@@ -196,17 +197,6 @@ export function Navbar({ content, locale }: NavbarProps) {
 
     itemLinkRefs.current[safeIndex]?.focus();
   };
-
-  useEffect(() => {
-    if (!portfolioGroups.length) {
-      setActivePortfolioGroup(null);
-      return;
-    }
-
-    if (!activePortfolioGroup || !portfolioGroups.some((group) => group.key === activePortfolioGroup)) {
-      setActivePortfolioGroup(portfolioGroups[0].key);
-    }
-  }, [portfolioGroups, activePortfolioGroup]);
 
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent) => {
@@ -304,13 +294,19 @@ export function Navbar({ content, locale }: NavbarProps) {
       document.removeEventListener("mousemove", handleMouseMove);
       clearPortfolioCloseTimeout();
     };
-  }, [isPortfolioOpen, portfolioGroups.length]);
+  }, [
+    clearPortfolioCloseTimeout,
+    closePortfolio,
+    isPortfolioOpen,
+    portfolioGroups.length,
+    schedulePortfolioClose,
+  ]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stone-100 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <a href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/assets/APOIAR_sem_fundo.png"
               alt="APOIAR"
@@ -319,7 +315,7 @@ export function Navbar({ content, locale }: NavbarProps) {
               className="h-16 w-auto"
               priority
             />
-          </a>
+          </Link>
 
           <div className="hidden h-full items-center space-x-8 md:flex">
             {content.navLinks.map((link) => {
@@ -362,11 +358,11 @@ export function Navbar({ content, locale }: NavbarProps) {
                     <div
                       role="menu"
                       aria-label={link.label}
-                      className={`absolute left-0 top-full mt-2 min-w-[780px] rounded-2xl border border-stone-100 bg-white p-4 shadow-xl transition-all duration-200 ${
+                      className={`absolute left-0 top-full mt-2 w-[min(92vw,780px)] max-w-[calc(100vw-3rem)] rounded-2xl border border-stone-100 bg-white p-4 shadow-xl transition-all duration-200 ${
                         isPortfolioOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
                       }`}
                     >
-                      <div className="grid items-start grid-cols-[260px_minmax(0,1fr)] gap-4">
+                      <div className="grid items-start grid-cols-1 gap-4 md:grid-cols-[220px_minmax(0,1fr)]">
                         <div className="rounded-xl border border-stone-100 bg-stone-50 p-2">
                           <ul className="space-y-1">
                             {portfolioGroups.map((group, index) => {

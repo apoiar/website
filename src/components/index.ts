@@ -1,6 +1,7 @@
 export { Footer } from "@/components/layout/footer";
 export { Navbar } from "@/components/layout/navbar";
 export { Apoio } from "@/components/sections/apoio";
+export { ApoioMei } from "@/components/sections/apoio-mei";
 export { CTA } from "@/components/sections/cta";
 export { Hero } from "@/components/sections/hero";
 export { Mentoria } from "@/components/sections/mentoria";

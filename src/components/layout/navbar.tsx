@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import type { ContentSchema } from "@/config/content";
 import { LOCALE_COOKIE, LOCALES, type Locale } from "@/config/i18n";
@@ -69,11 +69,12 @@ export function Navbar({ content, locale }: NavbarProps) {
   const triangleProtectionActiveRef = useRef(false);
 
   const router = useRouter();
+  const pathname = usePathname();
 
   const formatLink = (href: string) => {
     if (href.startsWith("http") || href.startsWith("mailto")) return href;
     if (href === "#") return href;
-    if (href.startsWith("#")) return `/${href}`;
+    if (href.startsWith("#")) return pathname === "/" ? href : `/${href}`;
     return href.startsWith("/") ? href : `/${href}`;
   };
 
@@ -365,7 +366,7 @@ export function Navbar({ content, locale }: NavbarProps) {
                         isPortfolioOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
                       }`}
                     >
-                      <div className="grid grid-cols-[260px_minmax(0,1fr)] gap-4">
+                      <div className="grid items-start grid-cols-[260px_minmax(0,1fr)] gap-4">
                         <div className="rounded-xl border border-stone-100 bg-stone-50 p-2">
                           <ul className="space-y-1">
                             {portfolioGroups.map((group, index) => {
@@ -423,6 +424,11 @@ export function Navbar({ content, locale }: NavbarProps) {
                           className="rounded-xl border border-stone-100 p-2"
                           onMouseEnter={() => clearPortfolioCloseTimeout()}
                         >
+                          {activeGroup?.key === "BPO" ? (
+                            <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-stone-500">
+                              {locale === "en" ? "Modules" : locale === "es" ? "Modulos" : "Módulos"}
+                            </p>
+                          ) : null}
                           <ul className="space-y-1">
                             {activeGroup?.items.map((subItem, index) => (
                               <li key={`${activeGroup.key}-${subItem.label}`}>

@@ -1,5 +1,6 @@
 import {
   Apoio,
+  ApoioMei,
   CTA,
   Footer,
   Hero,
@@ -96,6 +97,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
         <Hero content={content.hero} />
         <Mentoria content={content.mentoria} />
         <Apoio content={content.apoio} />
+        <ApoioMei content={content.apoioMei} />
         <Resultados content={content.resultados} />
         <Testimonials content={content.testimonials} />
         <CTA content={content.cta} contact={content.contact} />

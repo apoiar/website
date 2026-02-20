@@ -26,7 +26,6 @@ export function Footer({ content }: FooterProps) {
 
   return (
     <footer
-      id={contact.sectionId}
       className="relative bg-warm-900 text-white py-16 lg:py-20 before:content-[''] before:absolute before:left-0 before:right-0 before:-top-0.5 before:h-2 before:bg-warm-900 before:pointer-events-none"
       style={{ transform: "translateZ(0)" }}
     >

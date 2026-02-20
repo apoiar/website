@@ -104,6 +104,21 @@ export type ContentSchema = {
       image: ImageContent;
     };
   };
+  apoioMei: {
+    sectionId: string;
+    badge: string;
+    titlePrefix: string;
+    titleHighlight: string;
+    description: string;
+    services: Array<{
+      title: string;
+      description: string;
+    }>;
+    cta: {
+      href: string;
+      label: string;
+    };
+  };
   resultados: {
     sectionId: string;
     badge: string;
@@ -221,14 +236,14 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portfólio",
         subItems: [
-          { group: "BPO", label: "Módulo de Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
-          { group: "BPO", label: "Módulo de Atendimento: Central de relacionamento online", href: "#apoio" },
-          { group: "BPO", label: "Módulo Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
-          { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#" },
-          { group: "Apoio ao MEI", label: "Emissão de Notas Fiscais", href: "#" },
-          { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#" },
-          { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#" },
-          { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#" },
+          { group: "BPO", label: "Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
+          { group: "BPO", label: "Atendimento: Central de relacionamento online", href: "#apoio" },
+          { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
+          { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#apoio-mei" },
+          { group: "Apoio ao MEI", label: "Emissão de Notas Fiscais", href: "#apoio-mei" },
+          { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#apoio-mei" },
+          { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#apoio-mei" },
+          { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#apoio-mei" },
           { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#mentoria" },
           { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#" },
           { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#" },
@@ -351,6 +366,45 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           ...BASE_IMAGES.apoioHighlight,
           alt: "Equipe trabalhando",
         },
+      },
+    },
+    apoioMei: {
+      sectionId: "apoio-mei",
+      badge: "Apoio ao MEI",
+      titlePrefix: "Tudo para o",
+      titleHighlight: "MEI em Dia",
+      description:
+        "Centralize as demandas do MEI com o nosso time e evite retrabalho, atrasos e multas. Cuidamos da rotina burocratica enquanto voce foca no crescimento.",
+      services: [
+        {
+          title: "Abertura de CNPJ",
+          description:
+            "Orientacao completa para abertura do MEI com enquadramento correto desde o primeiro passo.",
+        },
+        {
+          title: "Emissao de Notas Fiscais",
+          description:
+            "Suporte para emissao de notas fiscais com padrao e seguranca para atender clientes e orgaos fiscalizadores.",
+        },
+        {
+          title: "Emissao de DAS",
+          description:
+            "Controle e emissao mensal do DAS para manter o CNPJ regular e sem sustos com vencimentos.",
+        },
+        {
+          title: "Declaracao Anual do MEI",
+          description:
+            "Preparacao e envio da declaracao anual com revisao de dados para evitar inconsistencias.",
+        },
+        {
+          title: "Encerramento do MEI",
+          description:
+            "Acompanhamento no processo de baixa com orientacoes sobre pendencias e regularizacao final.",
+        },
+      ],
+      cta: {
+        href: "#contato",
+        label: "Quero apoio para meu MEI",
       },
     },
     resultados: {
@@ -483,14 +537,14 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portfolio",
         subItems: [
-          { group: "BPO", label: "Support Module", href: "#apoio" },
-          { group: "BPO", label: "Customer Service Module", href: "#apoio" },
-          { group: "BPO", label: "Commercial Module", href: "#apoio" },
-          { group: "MEI Support", label: "Company Opening", href: "#" },
-          { group: "MEI Support", label: "Invoice Issuance", href: "#" },
-          { group: "MEI Support", label: "DAS Issuance", href: "#" },
-          { group: "MEI Support", label: "Annual Declaration", href: "#" },
-          { group: "MEI Support", label: "Company Closure", href: "#" },
+          { group: "BPO", label: "Support: Your administrative assistant", href: "#apoio" },
+          { group: "BPO", label: "Customer Service: Online relationship center", href: "#apoio" },
+          { group: "BPO", label: "Commercial: Scale sales with our experts", href: "#apoio" },
+          { group: "MEI Support", label: "Company Opening", href: "#apoio-mei" },
+          { group: "MEI Support", label: "Invoice Issuance", href: "#apoio-mei" },
+          { group: "MEI Support", label: "DAS Issuance", href: "#apoio-mei" },
+          { group: "MEI Support", label: "Annual Declaration", href: "#apoio-mei" },
+          { group: "MEI Support", label: "Company Closure", href: "#apoio-mei" },
           { group: "Mentorship", label: "Business Mentorship", href: "#mentoria" },
           { group: "Technology", label: "App Atender", href: "#" },
           { group: "Technology", label: "App Kito", href: "#" },
@@ -613,6 +667,45 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           ...BASE_IMAGES.apoioHighlight,
           alt: "Team working",
         },
+      },
+    },
+    apoioMei: {
+      sectionId: "apoio-mei",
+      badge: "MEI Support",
+      titlePrefix: "Everything your",
+      titleHighlight: "MEI Needs",
+      description:
+        "Centralize your MEI routines with our team and avoid delays, rework, and penalties. We handle bureaucracy while you focus on growth.",
+      services: [
+        {
+          title: "Company Opening",
+          description:
+            "Complete guidance to open your MEI with the right setup from day one.",
+        },
+        {
+          title: "Invoice Issuance",
+          description:
+            "Practical support to issue invoices correctly and keep your operation reliable.",
+        },
+        {
+          title: "DAS Issuance",
+          description:
+            "Monthly DAS control and issuance to keep your registration regular and up to date.",
+        },
+        {
+          title: "Annual Declaration",
+          description:
+            "Preparation and submission of your annual declaration with data checks to prevent inconsistencies.",
+        },
+        {
+          title: "Company Closure",
+          description:
+            "Support through the closure process, including pending items and final regularization steps.",
+        },
+      ],
+      cta: {
+        href: "#contato",
+        label: "Get MEI support now",
       },
     },
     resultados: {
@@ -746,14 +839,14 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portafolio",
         subItems: [
-          { group: "BPO", label: "Módulo de Apoyo", href: "#apoio" },
-          { group: "BPO", label: "Módulo de Atención", href: "#apoio" },
-          { group: "BPO", label: "Módulo Comercial", href: "#apoio" },
-          { group: "Apoyo MEI", label: "Apertura de Empresa", href: "#" },
-          { group: "Apoyo MEI", label: "Emisión de Facturas", href: "#" },
-          { group: "Apoyo MEI", label: "Emisión de DAS", href: "#" },
-          { group: "Apoyo MEI", label: "Declaración Anual", href: "#" },
-          { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#" },
+          { group: "BPO", label: "Apoyo: Tu asistente administrativo", href: "#apoio" },
+          { group: "BPO", label: "Atención: Central de relacionamiento online", href: "#apoio" },
+          { group: "BPO", label: "Comercial: Escala tus ventas con nuestros especialistas", href: "#apoio" },
+          { group: "Apoyo MEI", label: "Apertura de Empresa", href: "#apoio-mei" },
+          { group: "Apoyo MEI", label: "Emisión de Facturas", href: "#apoio-mei" },
+          { group: "Apoyo MEI", label: "Emisión de DAS", href: "#apoio-mei" },
+          { group: "Apoyo MEI", label: "Declaración Anual", href: "#apoio-mei" },
+          { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#apoio-mei" },
           { group: "Mentoría", label: "Mentoría Empresarial", href: "#mentoria" },
           { group: "Tecnología", label: "App Atender", href: "#" },
           { group: "Tecnología", label: "App Kito", href: "#" },
@@ -876,6 +969,45 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           ...BASE_IMAGES.apoioHighlight,
           alt: "Equipo trabajando",
         },
+      },
+    },
+    apoioMei: {
+      sectionId: "apoio-mei",
+      badge: "Apoyo MEI",
+      titlePrefix: "Todo para tu",
+      titleHighlight: "MEI al dia",
+      description:
+        "Centraliza la rutina de tu MEI con nuestro equipo y evita atrasos, retrabajo y multas. Nosotros gestionamos la burocracia y tu te enfocas en crecer.",
+      services: [
+        {
+          title: "Apertura de Empresa",
+          description:
+            "Acompañamiento completo para abrir tu MEI con el encuadre correcto desde el inicio.",
+        },
+        {
+          title: "Emision de Facturas",
+          description:
+            "Soporte para emitir facturas correctamente y mantener tu operacion segura y confiable.",
+        },
+        {
+          title: "Emision de DAS",
+          description:
+            "Control y emision mensual del DAS para mantener tu registro regularizado.",
+        },
+        {
+          title: "Declaracion Anual",
+          description:
+            "Preparacion y envio de la declaracion anual con revision de datos para evitar inconsistencias.",
+        },
+        {
+          title: "Cierre de Empresa",
+          description:
+            "Acompañamiento en el cierre del MEI con orientacion sobre pendientes y regularizacion final.",
+        },
+      ],
+      cta: {
+        href: "#contato",
+        label: "Quiero apoyo para mi MEI",
       },
     },
     resultados: {

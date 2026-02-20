@@ -41,6 +41,8 @@ export type ContentSchema = {
   };
   ui: {
     navbarContactCta: string;
+    ouvidoriaLabel: string;
+    restrictedAccessLabel: string;
     openMenuAria: string;
     languageLabel: string;
     footerQuickLinksTitle: string;
@@ -163,6 +165,33 @@ export type ContentSchema = {
       playStoreUrl: string;
     }>;
   };
+  ouvidoria: {
+    sectionId: string;
+    badge: string;
+    title: string;
+    description: string;
+    formTitle: string;
+    formDescription: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    typeLabel: string;
+    typePlaceholder: string;
+    typeInternalLabel: string;
+    typeExternalLabel: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submitLabel: string;
+    submittingLabel: string;
+    successMessage: string;
+    errorMessage: string;
+    sidebarTitle: string;
+    sidebarItems: string[];
+    confidentialityNote: string;
+  };
   cta: {
     title: string;
     description: string;
@@ -230,6 +259,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     contact: BASE_CONTACT,
     ui: {
       navbarContactCta: "Fale Conosco",
+      ouvidoriaLabel: "Ouvidoria",
+      restrictedAccessLabel: "Acesso restrito",
       openMenuAria: "Abrir menu",
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Links Rapidos",
@@ -264,10 +295,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         ]
       },
       { href: "#resultados", label: "Resultados" },
+      { href: "/ouvidoria", label: "Ouvidoria" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contato" },
     ],
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
+      { href: "/ouvidoria", label: "Ouvidoria" },
       { href: "#mentoria", label: "Mentoria" },
       { href: "#apoio", label: "Apoio no Dia a Dia" },
       { href: "#resultados", label: "Resultados" },
@@ -539,6 +572,40 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
       ],
     },
+    ouvidoria: {
+      sectionId: "ouvidoria",
+      badge: "Canal de Etica e Transparencia",
+      title: "Ouvidoria APOIAR",
+      description:
+        "Use este canal para registrar denuncias internas ou externas com sigilo e tratamento responsavel.",
+      formTitle: "Envie sua denuncia",
+      formDescription:
+        "Os campos de identificacao sao opcionais. Sua mensagem sera enviada diretamente para o responsavel.",
+      nameLabel: "Nome (opcional)",
+      namePlaceholder: "Seu nome",
+      emailLabel: "Email (opcional)",
+      emailPlaceholder: "voce@exemplo.com",
+      phoneLabel: "Telefone (opcional)",
+      phonePlaceholder: "(00) 00000-0000",
+      typeLabel: "Tipo de denuncia",
+      typePlaceholder: "Selecione o tipo",
+      typeInternalLabel: "Interna",
+      typeExternalLabel: "Externa",
+      messageLabel: "Texto da denuncia",
+      messagePlaceholder: "Descreva o ocorrido com o maximo de detalhes.",
+      submitLabel: "Enviar denuncia",
+      submittingLabel: "Enviando...",
+      successMessage: "Denuncia enviada com sucesso.",
+      errorMessage: "Nao foi possivel enviar agora. Tente novamente em instantes.",
+      sidebarTitle: "Como funciona",
+      sidebarItems: [
+        "Sua denuncia chega diretamente ao canal de ouvidoria.",
+        "A triagem inicial e feita com confidencialidade.",
+        "Os dados sao tratados em conformidade com nossa politica de privacidade.",
+      ],
+      confidentialityNote:
+        "Ao enviar, voce declara que as informacoes sao verdadeiras e autoriza o tratamento para apuracao.",
+    },
     cta: {
       title: "Pronto para transformar seu negocio?",
       description:
@@ -557,6 +624,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     contact: BASE_CONTACT,
     ui: {
       navbarContactCta: "Contact Us",
+      ouvidoriaLabel: "Ombudsman",
+      restrictedAccessLabel: "Restricted access",
       openMenuAria: "Open menu",
       languageLabel: "Language",
       footerQuickLinksTitle: "Quick Links",
@@ -591,10 +660,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         ]
       },
       { href: "#resultados", label: "Results" },
+      { href: "/ouvidoria", label: "Ombudsman" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contact" },
     ],
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
+      { href: "/ouvidoria", label: "Ombudsman" },
       { href: "#mentoria", label: "Mentorship" },
       { href: "#apoio", label: "Daily Operations Support" },
       { href: "#resultados", label: "Results" },
@@ -867,6 +938,40 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
       ],
     },
+    ouvidoria: {
+      sectionId: "ouvidoria",
+      badge: "Ethics and Integrity Channel",
+      title: "APOIAR Ombudsman",
+      description:
+        "Use this channel to submit internal or external reports with confidentiality and responsible handling.",
+      formTitle: "Submit your report",
+      formDescription:
+        "Identification fields are optional. Your message will be sent directly to the responsible contact.",
+      nameLabel: "Name (optional)",
+      namePlaceholder: "Your name",
+      emailLabel: "Email (optional)",
+      emailPlaceholder: "you@example.com",
+      phoneLabel: "Phone (optional)",
+      phonePlaceholder: "+55 (00) 00000-0000",
+      typeLabel: "Report type",
+      typePlaceholder: "Select a type",
+      typeInternalLabel: "Internal",
+      typeExternalLabel: "External",
+      messageLabel: "Report details",
+      messagePlaceholder: "Describe what happened with as much detail as possible.",
+      submitLabel: "Send report",
+      submittingLabel: "Sending...",
+      successMessage: "Report sent successfully.",
+      errorMessage: "Could not send right now. Please try again shortly.",
+      sidebarTitle: "How it works",
+      sidebarItems: [
+        "Your report is delivered directly to the ombudsman channel.",
+        "Initial triage is conducted with confidentiality.",
+        "Data is handled according to our privacy policy.",
+      ],
+      confidentialityNote:
+        "By submitting, you confirm the information is truthful and authorize processing for investigation.",
+    },
     cta: {
       title: "Ready to transform your business?",
       description:
@@ -885,6 +990,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     contact: BASE_CONTACT,
     ui: {
       navbarContactCta: "Habla con Nosotros",
+      ouvidoriaLabel: "Ouvidoria",
+      restrictedAccessLabel: "Acceso restringido",
       openMenuAria: "Abrir menu",
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Enlaces Rapidos",
@@ -919,10 +1026,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         ]
       },
       { href: "#resultados", label: "Resultados" },
+      { href: "/ouvidoria", label: "Ouvidoria" },
       { href: `#${BASE_CONTACT.sectionId}`, label: "Contacto" },
     ],
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
+      { href: "/ouvidoria", label: "Ouvidoria" },
       { href: "#mentoria", label: "Mentoria" },
       { href: "#apoio", label: "Apoyo Diario" },
       { href: "#resultados", label: "Resultados" },
@@ -1193,6 +1302,40 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
         },
       ],
+    },
+    ouvidoria: {
+      sectionId: "ouvidoria",
+      badge: "Canal de Etica y Transparencia",
+      title: "Ouvidoria APOIAR",
+      description:
+        "Utiliza este canal para registrar denuncias internas o externas con confidencialidad y tratamiento responsable.",
+      formTitle: "Envia tu denuncia",
+      formDescription:
+        "Los campos de identificacion son opcionales. Tu mensaje se enviara directamente al responsable.",
+      nameLabel: "Nombre (opcional)",
+      namePlaceholder: "Tu nombre",
+      emailLabel: "Email (opcional)",
+      emailPlaceholder: "tu@ejemplo.com",
+      phoneLabel: "Telefono (opcional)",
+      phonePlaceholder: "+55 (00) 00000-0000",
+      typeLabel: "Tipo de denuncia",
+      typePlaceholder: "Selecciona el tipo",
+      typeInternalLabel: "Interna",
+      typeExternalLabel: "Externa",
+      messageLabel: "Texto de la denuncia",
+      messagePlaceholder: "Describe lo ocurrido con la mayor cantidad de detalles posible.",
+      submitLabel: "Enviar denuncia",
+      submittingLabel: "Enviando...",
+      successMessage: "Denuncia enviada con exito.",
+      errorMessage: "No fue posible enviar ahora. Intenta nuevamente en instantes.",
+      sidebarTitle: "Como funciona",
+      sidebarItems: [
+        "Tu denuncia llega directamente al canal de ouvidoria.",
+        "La clasificacion inicial se realiza con confidencialidad.",
+        "Los datos se tratan de acuerdo con nuestra politica de privacidad.",
+      ],
+      confidentialityNote:
+        "Al enviar, declaras que la informacion es verdadera y autorizas el tratamiento para investigacion.",
     },
     cta: {
       title: "Listo para transformar tu negocio?",

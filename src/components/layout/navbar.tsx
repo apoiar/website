@@ -548,6 +548,14 @@ export function Navbar({ content, locale }: NavbarProps) {
               )}
             </div>
             <a
+              href="https://appapoiar.rfv.net.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full border border-stone-200 bg-white px-4 py-3 text-sm font-semibold text-stone-700 transition-all hover:-translate-y-0.5 hover:border-lime-500 hover:text-lime-700"
+            >
+              {content.ui.restrictedAccessLabel}
+            </a>
+            <a
               href={`/#${content.contact.sectionId}`}
               className="inline-flex rounded-full bg-lime-500 px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-lime-600 hover:shadow-lg"
             >
@@ -716,6 +724,15 @@ export function Navbar({ content, locale }: NavbarProps) {
               )}
             </div>
 
+            <a
+              href="https://appapoiar.rfv.net.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-full border border-stone-200 bg-white px-6 py-3 text-center text-sm font-semibold text-stone-700 transition-all hover:border-lime-500 hover:text-lime-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {content.ui.restrictedAccessLabel}
+            </a>
             <a
               href={`/#${content.contact.sectionId}`}
               className="block rounded-full bg-lime-500 px-6 py-3 text-center font-semibold text-white transition-all hover:bg-lime-600"

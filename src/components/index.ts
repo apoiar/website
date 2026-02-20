@@ -6,5 +6,6 @@ export { CTA } from "@/components/sections/cta";
 export { Hero } from "@/components/sections/hero";
 export { Mentoria } from "@/components/sections/mentoria";
 export { Resultados } from "@/components/sections/resultados";
+export { Tecnologia } from "@/components/sections/tecnologia";
 export { Testimonials } from "@/components/sections/testimonials";
 export { WhatsAppButton } from "@/components/ui/whatsapp-button";

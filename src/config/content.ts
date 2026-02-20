@@ -149,6 +149,20 @@ export type ContentSchema = {
       image?: string;
     }>;
   };
+  tecnologia: {
+    sectionId: string;
+    badge: string;
+    titlePrefix: string;
+    titleHighlight: string;
+    description: string;
+    apps: Array<{
+      name: string;
+      description: string;
+      icon: string;
+      appStoreUrl: string;
+      playStoreUrl: string;
+    }>;
+  };
   cta: {
     title: string;
     description: string;
@@ -245,8 +259,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#apoio-mei" },
           { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#mentoria" },
-          { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#" },
-          { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#" },
+          { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#tecnologia" },
+          { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#tecnologia" },
         ]
       },
       { href: "#resultados", label: "Resultados" },
@@ -499,6 +513,32 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         }
       ],
     },
+    tecnologia: {
+      sectionId: "tecnologia",
+      badge: "Tecnologia APOIAR",
+      titlePrefix: "Solucoes que simplificam sua",
+      titleHighlight: "Operacao Digital",
+      description:
+        "Conheca nossos apps para atendimento e experiencia do cliente. Ferramentas praticas para ganhar velocidade e padronizar a rotina.",
+      apps: [
+        {
+          name: "App Atender",
+          description:
+            "Central de atendimento multichip para organizar conversas, distribuir chamados e responder com mais agilidade.",
+          icon: "placeholder-app-atender",
+          appStoreUrl: "#",
+          playStoreUrl: "#",
+        },
+        {
+          name: "App Kito",
+          description:
+            "Plataforma com leitura, entretenimento e estimulos para fortalecer relacionamento e gerar mais recorrencia.",
+          icon: "/assets/appsIcons/Kito_app_icon.webp",
+          appStoreUrl: "https://apps.apple.com/br/app/kito/id6749103511",
+          playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
+        },
+      ],
+    },
     cta: {
       title: "Pronto para transformar seu negocio?",
       description:
@@ -546,8 +586,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "MEI Support", label: "Annual Declaration", href: "#apoio-mei" },
           { group: "MEI Support", label: "Company Closure", href: "#apoio-mei" },
           { group: "Mentorship", label: "Business Mentorship", href: "#mentoria" },
-          { group: "Technology", label: "App Atender", href: "#" },
-          { group: "Technology", label: "App Kito", href: "#" },
+          { group: "Technology", label: "App Atender", href: "#tecnologia" },
+          { group: "Technology", label: "App Kito", href: "#tecnologia" },
         ]
       },
       { href: "#resultados", label: "Results" },
@@ -801,6 +841,32 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
 
       ],
     },
+    tecnologia: {
+      sectionId: "tecnologia",
+      badge: "APOIAR Technology",
+      titlePrefix: "Tools that simplify your",
+      titleHighlight: "Digital Operations",
+      description:
+        "Discover our apps for customer communication and engagement. Practical tools to increase speed and standardize routine execution.",
+      apps: [
+        {
+          name: "App Atender",
+          description:
+            "Multi-chip customer service hub to organize conversations, route requests, and reply faster.",
+          icon: "placeholder-app-atender",
+          appStoreUrl: "#",
+          playStoreUrl: "#",
+        },
+        {
+          name: "App Kito",
+          description:
+            "Reading, entertainment, and stimulation platform to improve customer relationship and retention.",
+          icon: "/assets/appsIcons/Kito_app_icon.webp",
+          appStoreUrl: "https://apps.apple.com/br/app/kito/id6749103511",
+          playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
+        },
+      ],
+    },
     cta: {
       title: "Ready to transform your business?",
       description:
@@ -848,8 +914,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "Apoyo MEI", label: "Declaración Anual", href: "#apoio-mei" },
           { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#apoio-mei" },
           { group: "Mentoría", label: "Mentoría Empresarial", href: "#mentoria" },
-          { group: "Tecnología", label: "App Atender", href: "#" },
-          { group: "Tecnología", label: "App Kito", href: "#" },
+          { group: "Tecnología", label: "App Atender", href: "#tecnologia" },
+          { group: "Tecnología", label: "App Kito", href: "#tecnologia" },
         ]
       },
       { href: "#resultados", label: "Resultados" },
@@ -1100,6 +1166,32 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           name: "Wellington Neto - Empresario",
           role: "Ponta Grossa, PR",
         }
+      ],
+    },
+    tecnologia: {
+      sectionId: "tecnologia",
+      badge: "Tecnologia APOIAR",
+      titlePrefix: "Soluciones para simplificar tu",
+      titleHighlight: "Operacion Digital",
+      description:
+        "Conoce nuestras apps para atencion y experiencia del cliente. Herramientas practicas para ganar velocidad y estandarizar la operacion.",
+      apps: [
+        {
+          name: "App Atender",
+          description:
+            "Central multichip para organizar conversaciones, distribuir solicitudes y responder con mas rapidez.",
+          icon: "placeholder-app-atender",
+          appStoreUrl: "#",
+          playStoreUrl: "#",
+        },
+        {
+          name: "App Kito",
+          description:
+            "Plataforma de lectura, entretenimiento y estimulos para fortalecer la relacion con clientes y aumentar recurrencia.",
+          icon: "/assets/appsIcons/Kito_app_icon.webp",
+          appStoreUrl: "https://apps.apple.com/br/app/kito/id6749103511",
+          playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
+        },
       ],
     },
     cta: {

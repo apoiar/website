@@ -24,14 +24,20 @@ export function Footer({ content }: FooterProps) {
     return href.startsWith("/") ? href : `/${href}`;
   };
 
+  const linksPerColumn = 3;
+  const quickLinkColumns: typeof footerQuickLinks[] = [];
+  for (let i = 0; i < footerQuickLinks.length; i += linksPerColumn) {
+    quickLinkColumns.push(footerQuickLinks.slice(i, i + linksPerColumn));
+  }
+
   return (
     <footer
       className="relative bg-warm-900 text-white py-16 lg:py-20 before:content-[''] before:absolute before:left-0 before:right-0 before:-top-0.5 before:h-2 before:bg-warm-900 before:pointer-events-none"
       style={{ transform: "translateZ(0)" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div className="lg:col-span-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
+          <div className="lg:col-span-5">
             <div className="flex items-center space-x-2 mb-6">
               <Image
                 src="/assets/APOIAR_sem_fundo.png"
@@ -60,23 +66,27 @@ export function Footer({ content }: FooterProps) {
             </div>
           </div>
 
-          <div>
+          <div className="lg:col-span-4">
             <h4 className="font-bold text-lg mb-6">{ui.footerQuickLinksTitle}</h4>
-            <ul className="space-y-4">
-              {footerQuickLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <a
-                    href={formatLink(link.href)}
-                    className="text-stone-400 hover:text-lime-400 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-4">
+              {quickLinkColumns.map((column, index) => (
+                <ul key={`quick-links-col-${index}`} className="space-y-4">
+                  {column.map((link) => (
+                    <li key={link.href + link.label}>
+                      <a
+                        href={formatLink(link.href)}
+                        className="text-stone-400 hover:text-lime-400 transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-bold text-lg mb-6">{ui.footerContactTitle}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">

@@ -12,20 +12,20 @@ type LegalPageLayoutProps = {
 
 const LEGAL_TITLE_BY_LOCALE = {
     privacy: {
-        pt: "Politica de Privacidade",
+        pt: "Política de Privacidade",
         en: "Privacy Policy",
-        es: "Politica de Privacidad",
+        es: "Política de Privacidad",
     },
     terms: {
         pt: "Termos de Uso",
         en: "Terms of Use",
-        es: "Terminos de Uso",
+        es: "Términos de Uso",
     },
 } as const;
 
 const LEGAL_NOTICE_BY_LOCALE = {
     en: "This is a courtesy translation. In case of divergence, the official Portuguese version prevails.",
-    es: "Esta es una traduccion de cortesia. En caso de divergencia, prevalece la version oficial en portugues.",
+    es: "Esta es una traducción de cortesía. En caso de divergencia, prevalece la versión oficial en portugués.",
 } as const;
 
 export function LegalPageLayout({ locale, title, pageType, children }: LegalPageLayoutProps) {

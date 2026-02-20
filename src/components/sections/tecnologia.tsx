@@ -59,6 +59,8 @@ export function Tecnologia({ content }: TecnologiaProps) {
                 <a
                   href={app.appStoreUrl}
                   aria-label={`${app.name} na App Store`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-stone-200 bg-white px-6 py-3 font-semibold text-stone-700 transition-colors hover:border-lime-400 hover:text-lime-700"
                 >
                   <Apple className="mr-2 h-5 w-5" />
@@ -67,6 +69,8 @@ export function Tecnologia({ content }: TecnologiaProps) {
                 <a
                   href={app.playStoreUrl}
                   aria-label={`${app.name} no Google Play`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-lime-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-lime-600"
                 >
                   <Play className="mr-2 h-5 w-5" />

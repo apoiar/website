@@ -1,4 +1,4 @@
-﻿import { DEFAULT_LOCALE, type Locale, isLocale } from "@/config/i18n";
+import { DEFAULT_LOCALE, type Locale, isLocale } from "@/config/i18n";
 
 type LinkItem = {
   href: string;
@@ -254,7 +254,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       shortName: "APOIAR",
       legalName: "APOIAR Consultoria & BPO",
       footerDescription:
-        "Vamos de maos dadas ate o seu objetivo. Transformamos a gestao do seu negocio para que voce tenha mais qualidade de vida.",
+        "Vamos de mãos dadas até o seu objetivo. Transformamos a gestão do seu negócio para que você tenha mais qualidade de vida.",
     },
     contact: BASE_CONTACT,
     ui: {
@@ -263,7 +263,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       restrictedAccessLabel: "Acesso restrito",
       openMenuAria: "Abrir menu",
       languageLabel: "Idioma",
-      footerQuickLinksTitle: "Links Rapidos",
+      footerQuickLinksTitle: "Links Rápidos",
       footerContactTitle: "Contato",
       footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
       footerCoverageLabel: "Sede no Rio de Janeiro com atendimento em todo o Brasil (online).",
@@ -302,12 +302,13 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ouvidoria" },
       { href: "#mentoria", label: "Mentoria" },
+      { href: "#apoio-mei", label: "Apoio ao MEI" },
       { href: "#apoio", label: "Apoio no Dia a Dia" },
       { href: "#resultados", label: "Resultados" },
-      { href: "#", label: "Sobre Nos" },
+      { href: "#contato", label: "Contato" },
     ],
     footerLegalLinks: [
-      { href: "/politica-de-privacidade", label: "Politica de Privacidade" },
+      { href: "/politica-de-privacidade", label: "Política de Privacidade" },
       { href: "/termos-de-uso", label: "Termos de Uso" },
     ],
     hero: {
@@ -315,11 +316,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Trabalhamos pela sua",
       titleHighlight: "Qualidade de Vida",
       description:
-        "A gestao eficiente permite que voce saia da caixa e invista tempo no que realmente importa. Voce nao precisa mais estar sozinho na gestao.",
-      primaryCta: { href: "#mentoria", label: "Conheca Nossa Mentoria" },
+        "A gestão eficiente permite que você saia da caixa e invista tempo no que realmente importa. Você não precisa mais estar sozinho na gestão.",
+      primaryCta: { href: "#mentoria", label: "Conheça Nossa Mentoria" },
       secondaryCta: { href: "#apoio", label: "Como Funciona" },
       transformedCount: "+150",
-      transformedLabel: "empresarios transformados",
+      transformedLabel: "empresários transformados",
       avatars: [
         {
           src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
@@ -340,13 +341,13 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
       productivityStat: {
         value: "+40%",
-        label: "Produtividade media",
+        label: "Produtividade média",
       },
     },
     mentoria: {
       sectionId: "mentoria",
       badge: "Mentoria Personalizada",
-      titlePrefix: "Um mentor que esta sempre",
+      titlePrefix: "Um mentor que está sempre",
       titleHighlight: "ao seu lado",
       description:
         "Imagine ter um experiente parceiro de negocios disponivel para voce, com encontros regulares por video, linguagem acessivel e um suporte ilimitado via WhatsApp sempre que precisar.",
@@ -360,7 +361,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
       points: [
         {
-          title: "Encontros por Video",
+          title: "Encontros por Vídeo",
           description:
             "Sessoes semanais ou quinzenais para alinhar estrategias e resolver desafios em tempo real.",
         },
@@ -370,7 +371,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
             "Uma via direta de comunicacao para tirar duvidas rapidas e receber orientacao sempre que precisar.",
         },
         {
-          title: "Linguagem Acessivel",
+          title: "Linguagem Acessível",
           description:
             "Sem jargoes complicados. Conversamos na sua lingua, focando no que realmente importa para o seu negocio.",
         },
@@ -378,7 +379,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     apoio: {
       sectionId: "apoio",
-      badge: "Operacao Completa",
+      badge: "Operação Completa",
       titlePrefix: "Apoio no",
       titleHighlight: "Dia a Dia",
       description:
@@ -406,7 +407,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
       ],
       highlight: {
-        title: "Sem necessidade de gestao direta de funcionarios",
+        title: "Sem necessidade de gestão direta de funcionários",
         description:
           "Voce nao precisa mais lidar com contratacoes, treinamentos, ferias ou problemas pessoais da equipe. A APOIAR cuida de tudo, permitindo que voce foque exclusivamente no crescimento estrategico do seu negocio.",
         image: {
@@ -429,17 +430,17 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
             "Orientacao completa para abertura do MEI com enquadramento correto desde o primeiro passo.",
         },
         {
-          title: "Emissao de Notas Fiscais",
+          title: "Emissão de Notas Fiscais",
           description:
             "Suporte para emissao de notas fiscais com padrao e seguranca para atender clientes e orgaos fiscalizadores.",
         },
         {
-          title: "Emissao de DAS",
+          title: "Emissão de DAS",
           description:
             "Controle e emissao mensal do DAS para manter o CNPJ regular e sem sustos com vencimentos.",
         },
         {
-          title: "Declaracao Anual do MEI",
+          title: "Declaração Anual do MEI",
           description:
             "Preparacao e envio da declaracao anual com revisao de dados para evitar inconsistencias.",
         },
@@ -456,7 +457,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     resultados: {
       sectionId: "resultados",
-      badge: "Transformacao Real",
+      badge: "Transformação Real",
       titlePrefix: "Saindo do",
       titleHighlight: "Operacional",
       description: "Veja como a vida do empresario muda quando comeca a trabalhar com a APOIAR.",
@@ -468,17 +469,17 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           description: "Trabalhando 12+ horas por dia, sem tempo para familia ou lazer.",
         },
         {
-          title: "Gestao de pessoas estressante",
+          title: "Gestão de pessoas estressante",
           description: "Resolvendo problemas de equipe, faltas e conflitos diariamente.",
         },
         {
-          title: "Sem visao estrategica",
+          title: "Sem visão estratégica",
           description: "Preso em tarefas operacionais, sem tempo para pensar no futuro.",
         },
       ],
       afterItems: [
         {
-          title: "Horarios flexiveis",
+          title: "Horários flexíveis",
           description: "Trabalhando de forma estrategica, com tempo para o que realmente importa.",
         },
         {
@@ -500,7 +501,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
     },
     testimonials: {
-      badge: "Historias de Sucesso",
+      badge: "Histórias de Sucesso",
       titlePrefix: "O que dizem nossos",
       titleHighlight: "parceiros",
       items: [
@@ -549,8 +550,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     tecnologia: {
       sectionId: "tecnologia",
       badge: "Tecnologia APOIAR",
-      titlePrefix: "Solucoes que simplificam sua",
-      titleHighlight: "Operacao Digital",
+      titlePrefix: "Soluções que simplificam sua",
+      titleHighlight: "Operação Digital",
       description:
         "Conheca nossos apps para atendimento e experiencia do cliente. Ferramentas praticas para ganhar velocidade e padronizar a rotina.",
       apps: [
@@ -574,7 +575,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     ouvidoria: {
       sectionId: "ouvidoria",
-      badge: "Canal de Etica e Transparencia",
+      badge: "Canal de Ética e Transparência",
       title: "Ouvidoria APOIAR",
       description:
         "Use este canal para registrar denuncias internas ou externas com sigilo e tratamento responsavel.",
@@ -587,16 +588,16 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       emailPlaceholder: "voce@exemplo.com",
       phoneLabel: "Telefone (opcional)",
       phonePlaceholder: "(00) 00000-0000",
-      typeLabel: "Tipo de denuncia",
+      typeLabel: "Tipo de denúncia",
       typePlaceholder: "Selecione o tipo",
       typeInternalLabel: "Interna",
       typeExternalLabel: "Externa",
-      messageLabel: "Texto da denuncia",
+      messageLabel: "Texto da denúncia",
       messagePlaceholder: "Descreva o ocorrido com o maximo de detalhes.",
-      submitLabel: "Enviar denuncia",
+      submitLabel: "Enviar denúncia",
       submittingLabel: "Enviando...",
-      successMessage: "Denuncia enviada com sucesso.",
-      errorMessage: "Nao foi possivel enviar agora. Tente novamente em instantes.",
+      successMessage: "Denúncia enviada com sucesso.",
+      errorMessage: "Não foi possível enviar agora. Tente novamente em instantes.",
       sidebarTitle: "Como funciona",
       sidebarItems: [
         "Sua denuncia chega diretamente ao canal de ouvidoria.",
@@ -607,7 +608,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         "Ao enviar, voce declara que as informacoes sao verdadeiras e autoriza o tratamento para apuracao.",
     },
     cta: {
-      title: "Pronto para transformar seu negocio?",
+      title: "Pronto para transformar seu negócio?",
       description:
         "Vamos juntos construir uma gestao eficiente que permita voce viver melhor. Seu tempo vale ouro.",
       whatsappLabel: "Falar no WhatsApp",
@@ -667,9 +668,10 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ombudsman" },
       { href: "#mentoria", label: "Mentorship" },
+      { href: "#apoio-mei", label: "MEI Support" },
       { href: "#apoio", label: "Daily Operations Support" },
       { href: "#resultados", label: "Results" },
-      { href: "#", label: "About Us" },
+      { href: "#contato", label: "Contact" },
     ],
     footerLegalLinks: [
       { href: "/politica-de-privacidade", label: "Privacy Policy" },
@@ -985,19 +987,19 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       shortName: "APOIAR",
       legalName: "APOIAR Consultoria & BPO",
       footerDescription:
-        "Vamos contigo hasta tu objetivo. Transformamos la gestion de tu negocio para que tengas mejor calidad de vida.",
+        "Vamos contigo hasta tu objetivo. Transformamos la gestión de tu negocio para que tengas mejor calidad de vida.",
     },
     contact: BASE_CONTACT,
     ui: {
       navbarContactCta: "Habla con Nosotros",
       ouvidoriaLabel: "Ouvidoria",
       restrictedAccessLabel: "Acceso restringido",
-      openMenuAria: "Abrir menu",
+      openMenuAria: "Abrir menú",
       languageLabel: "Idioma",
-      footerQuickLinksTitle: "Enlaces Rapidos",
+      footerQuickLinksTitle: "Enlaces Rápidos",
       footerContactTitle: "Contacto",
       footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
-      footerCoverageLabel: "Sede en Rio de Janeiro con atencion en todo Brasil (en linea).",
+      footerCoverageLabel: "Sede en Río de Janeiro con atención en todo Brasil (en línea).",
       whatsappText: "WhatsApp",
       rightsReserved: "Todos los derechos reservados.",
       whatsappAriaLabel: "Hablar por WhatsApp",
@@ -1033,21 +1035,22 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ouvidoria" },
       { href: "#mentoria", label: "Mentoria" },
+      { href: "#apoio-mei", label: "Apoyo MEI" },
       { href: "#apoio", label: "Apoyo Diario" },
       { href: "#resultados", label: "Resultados" },
-      { href: "#", label: "Sobre Nosotros" },
+      { href: "#contato", label: "Contacto" },
     ],
     footerLegalLinks: [
-      { href: "/politica-de-privacidade", label: "Politica de Privacidad" },
-      { href: "/termos-de-uso", label: "Terminos de Uso" },
+      { href: "/politica-de-privacidade", label: "Política de Privacidad" },
+      { href: "/termos-de-uso", label: "Términos de Uso" },
     ],
     hero: {
       badge: "Consultoria & BPO",
       titlePrefix: "Trabajamos por tu",
       titleHighlight: "Calidad de Vida",
       description:
-        "La gestion eficiente te permite salir de la rutina operativa e invertir tiempo en lo que realmente importa. Ya no tienes que gestionar todo solo.",
-      primaryCta: { href: "#mentoria", label: "Conoce Nuestra Mentoria" },
+        "La gestión eficiente te permite salir de la rutina operativa e invertir tiempo en lo que realmente importa. Ya no tienes que gestionar todo solo.",
+      primaryCta: { href: "#mentoria", label: "Conoce Nuestra Mentoría" },
       secondaryCta: { href: "#apoio", label: "Como Funciona" },
       transformedCount: "+150",
       transformedLabel: "empresarios transformados",
@@ -1076,7 +1079,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     mentoria: {
       sectionId: "mentoria",
-      badge: "Mentoria Personalizada",
+      badge: "Mentoría Personalizada",
       titlePrefix: "Un mentor siempre",
       titleHighlight: "a tu lado",
       description:
@@ -1109,9 +1112,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     apoio: {
       sectionId: "apoio",
-      badge: "Operacion Completa",
+      badge: "Operación Completa",
       titlePrefix: "Apoyo en el",
-      titleHighlight: "Dia a Dia",
+      titleHighlight: "Día a Día",
       description:
         "Deja las tareas operativas con nosotros. Nos ocupamos de todo para que no tengas que preocuparte por la gestion operativa.",
       cards: [
@@ -1137,7 +1140,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
       ],
       highlight: {
-        title: "Sin gestion directa de empleados",
+        title: "Sin gestión directa de empleados",
         description:
           "Ya no necesitas ocuparte de contrataciones, capacitaciones, vacaciones o problemas personales del equipo. APOIAR se encarga de la operacion para que te enfoques en crecer.",
         image: {
@@ -1150,7 +1153,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       sectionId: "apoio-mei",
       badge: "Apoyo MEI",
       titlePrefix: "Todo para tu",
-      titleHighlight: "MEI al dia",
+      titleHighlight: "MEI al día",
       description:
         "Centraliza la rutina de tu MEI con nuestro equipo y evita atrasos, retrabajo y multas. Nosotros gestionamos la burocracia y tu te enfocas en crecer.",
       services: [
@@ -1160,17 +1163,17 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
             "Acompañamiento completo para abrir tu MEI con el encuadre correcto desde el inicio.",
         },
         {
-          title: "Emision de Facturas",
+          title: "Emisión de Facturas",
           description:
             "Soporte para emitir facturas correctamente y mantener tu operacion segura y confiable.",
         },
         {
-          title: "Emision de DAS",
+          title: "Emisión de DAS",
           description:
             "Control y emision mensual del DAS para mantener tu registro regularizado.",
         },
         {
-          title: "Declaracion Anual",
+          title: "Declaración Anual",
           description:
             "Preparacion y envio de la declaracion anual con revision de datos para evitar inconsistencias.",
         },
@@ -1192,18 +1195,18 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Operativo",
       description: "Mira como cambia la vida del empresario cuando trabaja con APOIAR.",
       beforeLabel: "Antes",
-      afterLabel: "Despues",
+      afterLabel: "Después",
       beforeItems: [
         {
           title: "Sobrecarga constante",
           description: "Trabajando mas de 12 horas al dia, sin tiempo para familia o ocio.",
         },
         {
-          title: "Gestion de personas estresante",
+          title: "Gestión de personas estresante",
           description: "Resolviendo conflictos, ausencias y problemas del equipo a diario.",
         },
         {
-          title: "Sin vision estrategica",
+          title: "Sin visión estratégica",
           description: "Atrapado en tareas operativas, sin tiempo para pensar en el futuro.",
         },
       ],
@@ -1231,12 +1234,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
     },
     testimonials: {
-      badge: "Historias de Exito",
+      badge: "Historias de Éxito",
       titlePrefix: "Lo que dicen nuestros",
       titleHighlight: "socios",
       items: [
         {
-          quote: "Atencion rapida y eficaz. Profesionales extremadamente calificados.",
+          quote: "Atención rápida y eficaz. Profesionales extremadamente calificados.",
           name: "Wesley Alcântara Gaiola",
           role: "Empresario - Ribeirao Preto, SP",
         },
@@ -1279,7 +1282,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     tecnologia: {
       sectionId: "tecnologia",
-      badge: "Tecnologia APOIAR",
+      badge: "Tecnología APOIAR",
       titlePrefix: "Soluciones para simplificar tu",
       titleHighlight: "Operacion Digital",
       description:
@@ -1305,18 +1308,18 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     },
     ouvidoria: {
       sectionId: "ouvidoria",
-      badge: "Canal de Etica y Transparencia",
+      badge: "Canal de Ética y Transparencia",
       title: "Ouvidoria APOIAR",
       description:
         "Utiliza este canal para registrar denuncias internas o externas con confidencialidad y tratamiento responsable.",
-      formTitle: "Envia tu denuncia",
+      formTitle: "Envía tu denuncia",
       formDescription:
         "Los campos de identificacion son opcionales. Tu mensaje se enviara directamente al responsable.",
       nameLabel: "Nombre (opcional)",
       namePlaceholder: "Tu nombre",
       emailLabel: "Email (opcional)",
       emailPlaceholder: "tu@ejemplo.com",
-      phoneLabel: "Telefono (opcional)",
+      phoneLabel: "Teléfono (opcional)",
       phonePlaceholder: "+55 (00) 00000-0000",
       typeLabel: "Tipo de denuncia",
       typePlaceholder: "Selecciona el tipo",
@@ -1326,9 +1329,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       messagePlaceholder: "Describe lo ocurrido con la mayor cantidad de detalles posible.",
       submitLabel: "Enviar denuncia",
       submittingLabel: "Enviando...",
-      successMessage: "Denuncia enviada con exito.",
+      successMessage: "Denuncia enviada con éxito.",
       errorMessage: "No fue posible enviar ahora. Intenta nuevamente en instantes.",
-      sidebarTitle: "Como funciona",
+      sidebarTitle: "Cómo funciona",
       sidebarItems: [
         "Tu denuncia llega directamente al canal de ouvidoria.",
         "La clasificacion inicial se realiza con confidencialidad.",

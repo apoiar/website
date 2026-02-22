@@ -6,7 +6,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
   terms: {
     pt: `<h2><strong>Termos de Uso do Website APOIAR - Consultoria &amp; BPO</strong></h2>
 <p>Bem-vindo ao website da APOIAR - Consultoria &amp; BPO. Ao acessar ou utilizar este website, disponível em
-    https://apoiarwebsite-dev.web.app/pt#, o usuário manifesta sua plena e incondicional concordância com os presentes
+    https://apoiarwebsite-dev.web.app/, o usuário manifesta sua plena e incondicional concordância com os presentes
     Termos de Uso, que constituem um acordo vinculante (Binding Agreement) entre o usuário e a APOIAR. A leitura atenta
     e a compreensão integral destes termos são premissas indispensáveis para a navegação e utilização dos recursos
     oferecidos.</p>
@@ -79,7 +79,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
     ricardo@rfv.net.br.</p>`,
     en: `<h2><strong>Terms of Use of the APOIAR Website - Consulting & BPO</strong></h2>
 <p>Welcome to the APOIAR - Consultoria & BPO website. By accessing or using this website, available at
-    https://apoiarwebsite-dev.web.app/pt#, the user expresses their full and unconditional agreement with these
+    https://apoiarwebsite-dev.web.app/, the user expresses their full and unconditional agreement with these
     Terms of Use, which constitute a binding agreement (Binding Agreement) between the user and APOIAR. Careful reading
     and the full understanding of these terms are essential premises for navigation and use of resources
     offered.</p>
@@ -152,7 +152,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
     ricardo@rfv.net.br.</p>`,
     es: `<h2><strong>Condiciones de uso del sitio web de APOIAR - Consultoría y BPO</strong></h2>
 <p>Bienvenido al sitio web de APOIAR - Consultoría & BPO. Al acceder o utilizar este sitio web, disponible en
-    https://apoiarwebsite-dev.web.app/pt#, el usuario expresa su total e incondicional conformidad con estos
+    https://apoiarwebsite-dev.web.app/, el usuario expresa su total e incondicional conformidad con estos
     Términos de Uso, que constituyen un acuerdo vinculante (Binding Agreement) entre el usuario y APOIAR. Lectura atenta
     y la comprensión total de estos términos son premisas esenciales para la navegación y el uso de los recursos.
     ofrecido.</p>
@@ -233,7 +233,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
     usamos, armazenamos, compartilhamos e protegemos as informações pessoais que você nos fornece ou que processamos em
     nome de nossos clientes, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 – LGPD) e
     demais legislações aplicáveis.</p>
-<p>Ao interagir com nosso website (https://apoiarwebsite-dev.web.app/pt#) ou ao utilizar nossos serviços de BPO, você
+<p>Ao interagir com nosso website (https://apoiarwebsite-dev.web.app/) ou ao utilizar nossos serviços de BPO, você
     concorda com os termos desta Política de Privacidade.</p>
 <h3><strong>1. Objetivo e Escopo</strong></h3>
 <p>Esta Política de Privacidade tem como objetivo informar aos Titulares dos Dados sobre as práticas de tratamento de
@@ -248,7 +248,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
 <h3><strong>2. Dados Coletados</strong></h3>
 <p>A Apoiar pode coletar e processar diferentes categorias de dados pessoais, dependendo da sua interação conosco:</p>
 <p><strong>2.1. Dados de Navegação no Website (quando a Apoiar atua como Controladora):</strong><br />Ao visitar nosso
-    website (https://apoiarwebsite-dev.web.app/pt#), podemos coletar automaticamente as seguintes informações:<br /></p>
+    website (https://apoiarwebsite-dev.web.app/), podemos coletar automaticamente as seguintes informações:<br /></p>
 <ul>
     <li>Dados de Identificação Digital: Endereço IP, tipo de navegador, sistema operacional, provedor de serviços de
         internet.</li>
@@ -426,7 +426,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
     we use, store, share and protect the personal information you provide to us or that we process in
     on behalf of our customers, in accordance with the General Personal Data Protection Law (Law No. 13,709/2018 – LGPD) and
     other applicable legislation.</p>
-<p>When interacting with our website (https://apoiarwebsite-dev.web.app/pt#) or using our BPO services, you
+<p>When interacting with our website (https://apoiarwebsite-dev.web.app/) or using our BPO services, you
     agree to the terms of this Privacy Policy.</p>
 <h3><strong>1. Objective and Scope</strong></h3>
 <p>This Privacy Policy aims to inform Data Subjects about data processing practices
@@ -441,7 +441,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
 <h3><strong>2. Data Collected</strong></h3>
 <p>Apoiar may collect and process different categories of personal data, depending on your interaction with us:</p>
 <p><strong>2.1. Website Navigation Data (when Apoiar acts as Controller):</strong><br />When visiting our
-    website (https://apoiarwebsite-dev.web.app/pt#), we may automatically collect the following information:<br /></p>
+    website (https://apoiarwebsite-dev.web.app/), we may automatically collect the following information:<br /></p>
 <ul>
     <li>Digital Identification Data: IP address, browser type, operating system, service provider
         internet.</li>
@@ -619,7 +619,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
     Usamos, almacenamos, compartimos y protegemos la información personal que usted nos proporciona o que procesamos en
     en nombre de nuestros clientes, de conformidad con la Ley General de Protección de Datos Personales (Ley N° 13.709/2018 – LGPD) y
     otra legislación aplicable.</p>
-<p>Al interactuar con nuestro sitio web (https://apoiarwebsite-dev.web.app/pt#) o utilizar nuestros servicios BPO, usted
+<p>Al interactuar con nuestro sitio web (https://apoiarwebsite-dev.web.app/) o utilizar nuestros servicios BPO, usted
     acepta los términos de esta Política de Privacidad.</p>
 <h3><strong>1. Objetivo y Alcance</strong></h3>
 <p>Esta Política de Privacidad tiene como objetivo informar a los Interesados sobre las prácticas de procesamiento de datos.
@@ -634,7 +634,7 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
 <h3><strong>2. Datos recopilados</strong></h3>
 <p>Apoiar puede recopilar y procesar diferentes categorías de datos personales, dependiendo de su interacción con nosotros:</p>
 <p><strong>2.1. Datos de Navegación del Sitio Web (cuando Apoiar actúa como Responsable del Tratamiento):</strong><br />Al visitar nuestro
-    sitio web (https://apoiarwebsite-dev.web.app/pt#), podemos recopilar automáticamente la siguiente información:<br /></p>
+    sitio web (https://apoiarwebsite-dev.web.app/), podemos recopilar automáticamente la siguiente información:<br /></p>
 <ul>
     <li>Datos de Identificación Digital: dirección IP, tipo de navegador, sistema operativo, proveedor de servicios
         Internet.</li>
@@ -810,3 +810,4 @@ const LEGAL_CONTENT: Record<LegalPageType, Record<Locale, string>> = {
 export function getLegalContent(locale: Locale, type: LegalPageType): string {
   return LEGAL_CONTENT[type][locale] ?? LEGAL_CONTENT[type].pt;
 }
+

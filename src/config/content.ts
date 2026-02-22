@@ -203,11 +203,11 @@ export type ContentSchema = {
 const BASE_CONTACT = {
   sectionId: "contato",
   email: "ricardo@rfv.net.br",
-  whatsappNumber: "5521976763797",
+  whatsappNumber: "5521988415352",
   city: "Sao Paulo",
   region: "SP",
   country: "Brazil",
-  whatsappUrl: "https://wa.me/5521976763797",
+  whatsappUrl: "https://wa.me/5521988415352",
   mailtoUrl: "mailto:ricardo@rfv.net.br",
 };
 
@@ -217,7 +217,7 @@ const BASE_SOCIAL_LINKS: SocialLink[] = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ricardo-furtado-vieira/",
   },
-  { id: "instagram", label: "Instagram", href: "#" },
+  { id: "instagram", label: "Instagram", href: "https://www.instagram.com/apoiar.bpo/" },
 ];
 
 const BASE_IMAGES = {
@@ -260,7 +260,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     ui: {
       navbarContactCta: "Fale Conosco",
       ouvidoriaLabel: "Ouvidoria",
-      restrictedAccessLabel: "Acesso restrito",
+      restrictedAccessLabel: "Acesso clientes",
       openMenuAria: "Abrir menu",
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Links Rápidos",
@@ -282,16 +282,16 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         label: "Portfólio",
         subItems: [
           { group: "BPO", label: "Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
-          { group: "BPO", label: "Atendimento: Central de relacionamento online", href: "#apoio" },
+          { group: "BPO", label: "Atendimento: Recurso dedicado ou compartilhado", href: "#apoio" },
           { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
           { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Emissão de Notas Fiscais", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#apoio-mei" },
-          { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#mentoria" },
+          { group: "Mentoria Empresarial", label: "Mentoria Empresarial: semanal e quinzenal", href: "#mentoria" },
           { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#tecnologia" },
-          { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#tecnologia" },
+          { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#app-kito" },
         ]
       },
       { href: "#resultados", label: "Resultados" },
@@ -386,19 +386,14 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         "Deixe as tarefas operacionais com a gente. Cuidamos de tudo para que voce nao precise se preocupar com a gestao operacional.",
       cards: [
         {
-          title: "Escalas de trabalho",
-          description:
-            "Organizacao de escalas de trabalho e controle de ponto para que voce nao precise se preocupar com atrasos e faltas.",
-        },
-        {
           title: "Administrativo",
           description:
-            "Documentacao, compliance, compras, fornecedores e toda a burocracia que tira seu tempo do que realmente importa.",
+            "Recurso dedicado ou compartilhado! Tenha um assistente administrativo para fazer as tarefas operacionais enquanto voce foca no estrategico.",
         },
         {
           title: "Atendimento",
           description:
-            "Central de relacionamento online todos os dias para garantir que seus clientes sejam sempre bem atendidos.",
+            "Documentos, contratos, escalas de trabalho, contato com clientes e fornecedores, triagem, recrutamento e selecao de novos talentos... deixe todo o operacional conosco!",
         },
         {
           title: "Comercial",
@@ -537,13 +532,31 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "A consultoria que recebi da Apoiar foi fundamental para aprimorar estratégias operacionais, comerciais e de marketing para a minha unidade. Com o apoio deles, consegui expandir significativamente o alcance e a aquisição de novos clientes. É um parceiro indispensável para o sucesso e crescimento do nosso negócio.",
-          name: "Artur Costa - Empresária",
+          name: "Arthur Costa - Empresário",
           role: "Maricá - RJ",
+          image: "/assets/testimonials/ArthurCosta.jpeg",
         },
         {
           quote: "Profissionalismo e competência. Uma empresa que pensou e se preparou para apoiar empresários em seus principais gaps.",
           name: "Wellington Neto - Empresário",
           role: "Ponta Grossa - PR",
+        },
+        {
+          quote: "Com a Apoiar pude otimizar meu tempo para exercer as atividades de gestora, pois os profissionais treinados e qualificados da Apoiar assumiram as atividades administrativas e de atendimentos, com total eficiência!",
+          name: "Eliana Abdalla - Empresária",
+          role: "São Luis - MA",
+          image: "/assets/testimonials/ElianaAbdalla.jpeg",
+        },
+        {
+          quote: "A Apoiar profissionalizou nossa operação. Superamos os desafios da gestão e caminhamos para um modelo de negócio seguro, escalável e focado na excelência do cuidado domiciliar.",
+          name: "Jeanice Lasta - Empresária",
+          role: "Torres - RS",
+          image: "/assets/testimonials/JeaniceLasta.jpeg",
+        },
+        {
+          quote: "Sou cliente da APOIAR e digo com toda certeza: é aquele parceiro que a gente confia de verdade! 👏✨ Uso o setor comercial que é feito com dedicação, responsabilidade e muito comprometimento. Com cuidado, atenção e vontade real de ajudar o cliente a crescer. Mais do que um excelente prestador de serviço, é um parceiro que caminha junto. Parabéns pelo trabalho sério e pela amizade construída ao longo dessa parceria! 🌟",
+          name: "Rita De Cássia Audickas - Enfermeira",
+          role: "São Caetano do Sul - SP",
         }
       ],
     },
@@ -558,15 +571,15 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         {
           name: "App Atender",
           description:
-            "Central de atendimento multichip para organizar conversas, distribuir chamados e responder com mais agilidade.",
+            "Plataforma multichip de atendimento via WhatsApp. Conecte quantos chips e tenha quantos departamentos e usuarios desejar! Profissionalize seu atendimento com agendamento de mensagens, Kanban, bloco de notas, chat interno, respostas rapidas e muito mais!",
           icon: "placeholder-app-atender",
-          appStoreUrl: "#",
-          playStoreUrl: "#",
+          appStoreUrl: "https://atenderapp.rfv.net.br/",
+          playStoreUrl: "https://atenderapp.rfv.net.br/",
         },
         {
           name: "App Kito",
           description:
-            "Plataforma com leitura, entretenimento e estimulos para fortalecer relacionamento e gerar mais recorrencia.",
+            "Livros, mini livros, jogos e muito estimulo para deixar sua mente ativa!",
           icon: "/assets/appsIcons/Kito_app_icon.webp",
           appStoreUrl: "https://apps.apple.com/br/app/kito/id6749103511",
           playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
@@ -657,7 +670,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "MEI Support", label: "Company Closure", href: "#apoio-mei" },
           { group: "Mentorship", label: "Business Mentorship", href: "#mentoria" },
           { group: "Technology", label: "App Atender", href: "#tecnologia" },
-          { group: "Technology", label: "App Kito", href: "#tecnologia" },
+          { group: "Technology", label: "App Kito", href: "#app-kito" },
         ]
       },
       { href: "#resultados", label: "Results" },
@@ -1024,7 +1037,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#apoio-mei" },
           { group: "Mentoría", label: "Mentoría Empresarial", href: "#mentoria" },
           { group: "Tecnología", label: "App Atender", href: "#tecnologia" },
-          { group: "Tecnología", label: "App Kito", href: "#tecnologia" },
+          { group: "Tecnología", label: "App Kito", href: "#app-kito" },
         ]
       },
       { href: "#resultados", label: "Resultados" },

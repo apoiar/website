@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import type { EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
@@ -80,7 +81,15 @@ export function Testimonials({ content }: TestimonialsProps) {
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <div className="flex items-center gap-4 mt-auto">
-                      <div className="hidden"></div>
+                      {testimonial.image ? (
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          width={56}
+                          height={56}
+                          className="h-14 w-14 rounded-full object-cover border border-stone-200"
+                        />
+                      ) : null}
                       <div>
                         <p className="font-bold text-warm-900">{testimonial.name}</p>
                         <p className="text-sm text-stone-500">{testimonial.role}</p>

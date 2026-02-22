@@ -22,12 +22,15 @@ export function Apoio({ content }: ApoioProps) {
           <p className="text-lg text-stone-600 mt-6 leading-relaxed">{content.description}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {content.cards.map((card, index) => {
             const Icon = cardIcons[index] ?? FileText;
 
             return (
-              <div key={card.title} className="bg-white rounded-3xl p-8 shadow-soft hover-lift transition-all border border-stone-200/60">
+              <div
+                key={card.title}
+                className="h-[330px] overflow-hidden bg-white rounded-3xl p-8 shadow-soft hover-lift transition-all border border-stone-200/60"
+              >
                 <div className="w-16 h-16 bg-lime-100 rounded-2xl flex items-center justify-center mb-6">
                   <Icon className="w-8 h-8 text-lime-600" />
                 </div>

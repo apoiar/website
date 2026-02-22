@@ -350,7 +350,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Um mentor que está sempre",
       titleHighlight: "ao seu lado",
       description:
-        "Imagine ter um experiente parceiro de negocios disponivel para voce, com encontros regulares por video, linguagem acessivel e um suporte ilimitado via WhatsApp sempre que precisar.",
+        "Imagine ter um experiente parceiro de negócios disponível para você, com encontros regulares por vídeo, linguagem acessível e suporte ilimitado via WhatsApp sempre que precisar.",
       mentor: {
         name: "Ricardo Furtado",
         role: "Mentor & Fundador APOIAR",
@@ -363,17 +363,17 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         {
           title: "Encontros por Vídeo",
           description:
-            "Sessoes semanais ou quinzenais para alinhar estrategias e resolver desafios em tempo real.",
+            "Sessões semanais ou quinzenais para alinhar estratégias e resolver desafios em tempo real.",
         },
         {
           title: "Suporte Ilimitado WhatsApp",
           description:
-            "Uma via direta de comunicacao para tirar duvidas rapidas e receber orientacao sempre que precisar.",
+            "Uma via direta de comunicação para tirar dúvidas rápidas e receber orientação sempre que precisar.",
         },
         {
           title: "Linguagem Acessível",
           description:
-            "Sem jargoes complicados. Conversamos na sua lingua, focando no que realmente importa para o seu negocio.",
+            "Sem jargões complicados. Conversamos na sua língua, focando no que realmente importa para o seu negócio.",
         },
       ],
     },
@@ -383,17 +383,17 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Apoio no",
       titleHighlight: "Dia a Dia",
       description:
-        "Deixe as tarefas operacionais com a gente. Cuidamos de tudo para que voce nao precise se preocupar com a gestao operacional.",
+        "Deixe as tarefas operacionais com a gente. Cuidamos de tudo para que você não precise se preocupar com a gestão operacional.",
       cards: [
         {
           title: "Administrativo",
           description:
-            "Recurso dedicado ou compartilhado! Tenha um assistente administrativo para fazer as tarefas operacionais enquanto voce foca no estrategico.",
+            "Recurso dedicado ou compartilhado! Tenha um assistente administrativo para fazer as tarefas operacionais enquanto você foca no estratégico.",
         },
         {
           title: "Atendimento",
           description:
-            "Documentos, contratos, escalas de trabalho, contato com clientes e fornecedores, triagem, recrutamento e selecao de novos talentos... deixe todo o operacional conosco!",
+            "Documentos, contratos, escalas de trabalho, contato com clientes e fornecedores, triagem, recrutamento e seleção de novos talentos... deixe todo o operacional conosco!",
         },
         {
           title: "Comercial",
@@ -404,7 +404,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       highlight: {
         title: "Sem necessidade de gestão direta de funcionários",
         description:
-          "Voce nao precisa mais lidar com contratacoes, treinamentos, ferias ou problemas pessoais da equipe. A APOIAR cuida de tudo, permitindo que voce foque exclusivamente no crescimento estrategico do seu negocio.",
+          "Você não precisa mais lidar com contratações, treinamentos, férias ou problemas pessoais da equipe. A APOIAR cuida de tudo, permitindo que você foque exclusivamente no crescimento estratégico do seu negócio.",
         image: {
           ...BASE_IMAGES.apoioHighlight,
           alt: "Equipe trabalhando",
@@ -417,32 +417,32 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Tudo para o",
       titleHighlight: "MEI em Dia",
       description:
-        "Centralize as demandas do MEI com o nosso time e evite retrabalho, atrasos e multas. Cuidamos da rotina burocratica enquanto voce foca no crescimento.",
+        "Centralize as demandas do MEI com o nosso time e evite retrabalho, atrasos e multas. Cuidamos da rotina burocrática enquanto você foca no crescimento.",
       services: [
         {
           title: "Abertura de CNPJ",
           description:
-            "Orientacao completa para abertura do MEI com enquadramento correto desde o primeiro passo.",
+            "Orientação completa para abertura do MEI com enquadramento correto desde o primeiro passo.",
         },
         {
           title: "Emissão de Notas Fiscais",
           description:
-            "Suporte para emissao de notas fiscais com padrao e seguranca para atender clientes e orgaos fiscalizadores.",
+            "Suporte para emissão de notas fiscais com padrão e segurança para atender clientes e órgãos fiscalizadores.",
         },
         {
           title: "Emissão de DAS",
           description:
-            "Controle e emissao mensal do DAS para manter o CNPJ regular e sem sustos com vencimentos.",
+            "Controle e emissão mensal do DAS para manter o CNPJ regular e sem sustos com vencimentos.",
         },
         {
           title: "Declaração Anual do MEI",
           description:
-            "Preparacao e envio da declaracao anual com revisao de dados para evitar inconsistencias.",
+            "Preparação e envio da declaração anual com revisão de dados para evitar inconsistências.",
         },
         {
           title: "Encerramento do MEI",
           description:
-            "Acompanhamento no processo de baixa com orientacoes sobre pendencias e regularizacao final.",
+            "Acompanhamento no processo de baixa, com orientações sobre pendências e regularização final.",
         },
       ],
       cta: {
@@ -455,13 +455,13 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       badge: "Transformação Real",
       titlePrefix: "Saindo do",
       titleHighlight: "Operacional",
-      description: "Veja como a vida do empresario muda quando comeca a trabalhar com a APOIAR.",
+      description: "Veja como a vida do empresário muda quando começa a trabalhar com a APOIAR.",
       beforeLabel: "Antes",
       afterLabel: "Depois",
       beforeItems: [
         {
           title: "Sobrecarga constante",
-          description: "Trabalhando 12+ horas por dia, sem tempo para familia ou lazer.",
+          description: "Trabalhando 12+ horas por dia, sem tempo para família ou lazer.",
         },
         {
           title: "Gestão de pessoas estressante",
@@ -475,15 +475,15 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       afterItems: [
         {
           title: "Horários flexíveis",
-          description: "Trabalhando de forma estrategica, com tempo para o que realmente importa.",
+          description: "Trabalhando de forma estratégica, com tempo para o que realmente importa.",
         },
         {
           title: "Equipe profissionalizada",
-          description: "A APOIAR cuida da gestao operacional, voce foca no crescimento.",
+          description: "A APOIAR cuida da gestão operacional, você foca no crescimento.",
         },
         {
-          title: "Negocio escalavel",
-          description: "Com processos otimizados e mentoria constante, seu negocio cresce.",
+          title: "Negócio escalável",
+          description: "Com processos otimizados e mentoria constante, seu negócio cresce.",
         },
       ],
       beforeImage: {
@@ -492,7 +492,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       },
       afterImage: {
         ...BASE_IMAGES.resultadosAfter,
-        alt: "Empresario feliz",
+        alt: "Empresário feliz",
       },
     },
     testimonials: {
@@ -542,9 +542,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           role: "Ponta Grossa - PR",
         },
         {
-          quote: "Com a Apoiar pude otimizar meu tempo para exercer as atividades de gestora, pois os profissionais treinados e qualificados da Apoiar assumiram as atividades administrativas e de atendimentos, com total eficiência!",
+          quote: "Com a Apoiar, pude otimizar meu tempo para exercer as atividades de gestora, pois os profissionais treinados e qualificados da Apoiar assumiram as atividades administrativas e de atendimento, com total eficiência!",
           name: "Eliana Abdalla - Empresária",
-          role: "São Luis - MA",
+          role: "São Luís - MA",
           image: "/assets/testimonials/ElianaAbdalla.jpeg",
         },
         {
@@ -566,12 +566,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titlePrefix: "Soluções que simplificam sua",
       titleHighlight: "Operação Digital",
       description:
-        "Conheca nossos apps para atendimento e experiencia do cliente. Ferramentas praticas para ganhar velocidade e padronizar a rotina.",
+        "Conheça nossos apps para atendimento e experiência do cliente. Ferramentas práticas para ganhar velocidade e padronizar a rotina.",
       apps: [
         {
           name: "App Atender",
           description:
-            "Plataforma multichip de atendimento via WhatsApp. Conecte quantos chips e tenha quantos departamentos e usuarios desejar! Profissionalize seu atendimento com agendamento de mensagens, Kanban, bloco de notas, chat interno, respostas rapidas e muito mais!",
+            "Plataforma multichip de atendimento via WhatsApp. Conecte quantos chips quiser e tenha quantos departamentos e usuários desejar! Profissionalize seu atendimento com agendamento de mensagens, Kanban, bloco de notas, chat interno, respostas rápidas e muito mais!",
           icon: "placeholder-app-atender",
           appStoreUrl: "https://atenderapp.rfv.net.br/",
           playStoreUrl: "https://atenderapp.rfv.net.br/",
@@ -579,7 +579,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         {
           name: "App Kito",
           description:
-            "Livros, mini livros, jogos e muito estimulo para deixar sua mente ativa!",
+            "Livros, mini livros, jogos e muito estímulo para deixar sua mente ativa!",
           icon: "/assets/appsIcons/Kito_app_icon.webp",
           appStoreUrl: "https://apps.apple.com/br/app/kito/id6749103511",
           playStoreUrl: "https://play.google.com/store/apps/details?id=com.acl.kitomobileapp&hl=pt_BR",
@@ -591,10 +591,10 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       badge: "Canal de Ética e Transparência",
       title: "Ouvidoria APOIAR",
       description:
-        "Use este canal para registrar denuncias internas ou externas com sigilo e tratamento responsavel.",
-      formTitle: "Envie sua denuncia",
+        "Use este canal para registrar denúncias internas ou externas com sigilo e tratamento responsável.",
+      formTitle: "Envie sua denúncia",
       formDescription:
-        "Os campos de identificacao sao opcionais. Sua mensagem sera enviada diretamente para o responsavel.",
+        "Os campos de identificação são opcionais. Sua mensagem será enviada diretamente para o responsável.",
       nameLabel: "Nome (opcional)",
       namePlaceholder: "Seu nome",
       emailLabel: "Email (opcional)",
@@ -606,24 +606,24 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       typeInternalLabel: "Interna",
       typeExternalLabel: "Externa",
       messageLabel: "Texto da denúncia",
-      messagePlaceholder: "Descreva o ocorrido com o maximo de detalhes.",
+      messagePlaceholder: "Descreva o ocorrido com o máximo de detalhes.",
       submitLabel: "Enviar denúncia",
       submittingLabel: "Enviando...",
       successMessage: "Denúncia enviada com sucesso.",
       errorMessage: "Não foi possível enviar agora. Tente novamente em instantes.",
       sidebarTitle: "Como funciona",
       sidebarItems: [
-        "Sua denuncia chega diretamente ao canal de ouvidoria.",
-        "A triagem inicial e feita com confidencialidade.",
-        "Os dados sao tratados em conformidade com nossa politica de privacidade.",
+        "Sua denúncia chega diretamente ao canal de ouvidoria.",
+        "A triagem inicial é feita com confidencialidade.",
+        "Os dados são tratados em conformidade com nossa política de privacidade.",
       ],
       confidentialityNote:
-        "Ao enviar, voce declara que as informacoes sao verdadeiras e autoriza o tratamento para apuracao.",
+        "Ao enviar, você declara que as informações são verdadeiras e autoriza o tratamento para apuração.",
     },
     cta: {
       title: "Pronto para transformar seu negócio?",
       description:
-        "Vamos juntos construir uma gestao eficiente que permita voce viver melhor. Seu tempo vale ouro.",
+        "Vamos juntos construir uma gestão eficiente que permita que você viva melhor. Seu tempo vale ouro.",
       whatsappLabel: "Falar no WhatsApp",
       emailLabel: "Enviar E-mail",
     },

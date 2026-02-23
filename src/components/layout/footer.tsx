@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, MapPinned, Phone } from "lucide-react";
 import type { ContentSchema } from "@/config/content";
 
 type FooterProps = {
@@ -9,6 +9,14 @@ type FooterProps = {
 function SocialIcon({ id }: { id: ContentSchema["socialLinks"][number]["id"] }) {
   if (id === "linkedin") {
     return <Linkedin className="w-5 h-5" />;
+  }
+
+  if (id === "facebook") {
+    return <Facebook className="w-5 h-5" />;
+  }
+
+  if (id === "google-business") {
+    return <MapPinned className="w-5 h-5" />;
   }
 
   return <Instagram className="w-5 h-5" />;

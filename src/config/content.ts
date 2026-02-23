@@ -11,7 +11,7 @@ type LinkItem = {
 };
 
 type SocialLink = {
-  id: "linkedin" | "instagram";
+  id: "linkedin" | "instagram" | "facebook" | "google-business";
   label: string;
   href: string;
 };
@@ -218,6 +218,12 @@ const BASE_SOCIAL_LINKS: SocialLink[] = [
     href: "https://www.linkedin.com/in/ricardo-furtado-vieira/",
   },
   { id: "instagram", label: "Instagram", href: "https://www.instagram.com/apoiar.bpo/" },
+  { id: "facebook", label: "Facebook", href: "#" },
+  {
+    id: "google-business",
+    label: "Google Meu Negocio",
+    href: "#",
+  },
 ];
 
 const BASE_IMAGES = {
@@ -284,12 +290,21 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "BPO", label: "Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
           { group: "BPO", label: "Atendimento: Recurso dedicado ou compartilhado", href: "#apoio" },
           { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
+          {
+            group: "BPO",
+            label: "Outras áreas operacionais - em sua empresa ou na nossa estrutura.",
+            href: "#apoio",
+          },
           { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Emissão de Notas Fiscais", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#apoio-mei" },
-          { group: "Mentoria Empresarial", label: "Mentoria Empresarial: semanal e quinzenal", href: "#mentoria" },
+          { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#" },
+          { group: "Mentoria Empresarial", label: "• Pontual", href: "#mentoria" },
+          { group: "Mentoria Empresarial", label: "• Semanal", href: "#mentoria" },
+          { group: "Mentoria Empresarial", label: "• Quinzenal", href: "#mentoria" },
+          { group: "Mentoria Empresarial", label: "• Mensal", href: "#mentoria" },
           { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#tecnologia" },
           { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#app-kito" },
         ]

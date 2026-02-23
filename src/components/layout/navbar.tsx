@@ -428,41 +428,47 @@ export function Navbar({ content, locale }: NavbarProps) {
                           <ul className="space-y-1">
                             {activeGroup?.items.map((subItem, index) => (
                               <li key={`${activeGroup.key}-${subItem.label}`}>
-                                <a
-                                  ref={(element) => {
-                                    itemLinkRefs.current[index] = element;
-                                  }}
-                                  href={formatLink(subItem.href)}
-                                  role="menuitem"
-                                  className="block rounded-lg px-3 py-2 text-sm font-medium text-stone-600 transition-colors hover:bg-lime-50 hover:text-lime-700"
-                                  onKeyDown={(event) => {
-                                    if (event.key === "ArrowDown") {
-                                      event.preventDefault();
-                                      focusItemByIndex(index + 1);
-                                    }
+                                {subItem.href === "#" ? (
+                                  <span className="block rounded-lg px-3 py-2 text-sm font-semibold text-stone-500">
+                                    {subItem.label}
+                                  </span>
+                                ) : (
+                                  <a
+                                    ref={(element) => {
+                                      itemLinkRefs.current[index] = element;
+                                    }}
+                                    href={formatLink(subItem.href)}
+                                    role="menuitem"
+                                    className="block rounded-lg px-3 py-2 text-sm font-medium text-stone-600 transition-colors hover:bg-lime-50 hover:text-lime-700"
+                                    onKeyDown={(event) => {
+                                      if (event.key === "ArrowDown") {
+                                        event.preventDefault();
+                                        focusItemByIndex(index + 1);
+                                      }
 
-                                    if (event.key === "ArrowUp") {
-                                      event.preventDefault();
-                                      focusItemByIndex(index - 1);
-                                    }
+                                      if (event.key === "ArrowUp") {
+                                        event.preventDefault();
+                                        focusItemByIndex(index - 1);
+                                      }
 
-                                    if (event.key === "ArrowLeft") {
-                                      event.preventDefault();
-                                      focusGroupByIndex(activeGroupIndex);
-                                    }
+                                      if (event.key === "ArrowLeft") {
+                                        event.preventDefault();
+                                        focusGroupByIndex(activeGroupIndex);
+                                      }
 
-                                    if (event.key === "Escape") {
-                                      event.preventDefault();
-                                      closePortfolio();
-                                      portfolioTriggerRef.current?.focus();
-                                    }
-                                  }}
-                                  onClick={() => {
-                                    setIsPortfolioOpen(false);
-                                  }}
-                                >
-                                  {subItem.label}
-                                </a>
+                                      if (event.key === "Escape") {
+                                        event.preventDefault();
+                                        closePortfolio();
+                                        portfolioTriggerRef.current?.focus();
+                                      }
+                                    }}
+                                    onClick={() => {
+                                      setIsPortfolioOpen(false);
+                                    }}
+                                  >
+                                    {subItem.label}
+                                  </a>
+                                )}
                               </li>
                             ))}
                           </ul>
@@ -627,17 +633,23 @@ export function Navbar({ content, locale }: NavbarProps) {
                                 <ul className="space-y-1 overflow-hidden p-2">
                                   {group.items.map((subItem) => (
                                     <li key={`${group.key}-${subItem.label}`}>
-                                      <a
-                                        href={formatLink(subItem.href)}
-                                        className="block rounded-lg px-2 py-2 text-sm text-stone-600 transition-colors hover:bg-lime-50 hover:text-lime-700"
-                                        onClick={() => {
-                                          setMobileMenuOpen(false);
-                                          setMobilePortfolioOpen(false);
-                                          setMobileActivePortfolioGroup(null);
-                                        }}
-                                      >
-                                        {subItem.label}
-                                      </a>
+                                      {subItem.href === "#" ? (
+                                        <span className="block rounded-lg px-2 py-2 text-sm font-semibold text-stone-500">
+                                          {subItem.label}
+                                        </span>
+                                      ) : (
+                                        <a
+                                          href={formatLink(subItem.href)}
+                                          className="block rounded-lg px-2 py-2 text-sm text-stone-600 transition-colors hover:bg-lime-50 hover:text-lime-700"
+                                          onClick={() => {
+                                            setMobileMenuOpen(false);
+                                            setMobilePortfolioOpen(false);
+                                            setMobileActivePortfolioGroup(null);
+                                          }}
+                                        >
+                                          {subItem.label}
+                                        </a>
+                                      )}
                                     </li>
                                   ))}
                                 </ul>

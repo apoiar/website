@@ -581,6 +581,12 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           quote: "Sou cliente da APOIAR e digo com toda certeza: é aquele parceiro que a gente confia de verdade! 👏✨ Uso o setor comercial que é feito com dedicação, responsabilidade e muito comprometimento. Com cuidado, atenção e vontade real de ajudar o cliente a crescer. Mais do que um excelente prestador de serviço, é um parceiro que caminha junto. Parabéns pelo trabalho sério e pela amizade construída ao longo dessa parceria! 🌟",
           name: "Rita De Cássia Audickas - Enfermeira",
           role: "São Caetano do Sul - SP",
+        },
+        {
+          quote: "Temos uma bela parceria com a Apoiar, atualmente utilizamos o módulo comercial e estamos muito satisfeitos com a conversão obtida. Essa parceria nos trouxe segurança para delegarmos uma atividade importantíssima dentro da empresa e sem sofrermos nenhum impacto negativo. Super recomendo a Apoiar, não apenas no módulo Comercial mas também em todos os outros que eles possuem.",
+          name: "Emerson Ferreira - Diretor",
+          role: "São Paulo - SP",
+          image: "/assets/testimonials/EmersonFerreira.jpeg",
         }
       ],
     },
@@ -951,13 +957,37 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "The consulting I received from Apoiar was essential to improve operational, commercial, and marketing strategies for my unit. With their support, I significantly expanded reach and new client acquisition. They are an indispensable partner for business success and growth.",
-          name: "Artur Costa - Business Owner",
+          name: "Arthur Costa - Business Owner",
           role: "Marica, RJ",
+          image: "/assets/testimonials/ArthurCosta.jpeg",
         },
         {
           quote: "Professionalism and competence. A company that prepared itself to support business owners in their main gaps.",
           name: "Wellington Neto - Business Owner",
           role: "Ponta Grossa, PR",
+        },
+        {
+          quote: "With Apoiar, I was able to optimize my time to perform management activities, because Apoiar's trained and qualified professionals took over the administrative and customer service tasks with full efficiency.",
+          name: "Eliana Abdalla - Business Owner",
+          role: "Sao Luis, MA",
+          image: "/assets/testimonials/ElianaAbdalla.jpeg",
+        },
+        {
+          quote: "Apoiar professionalized our operation. We overcame management challenges and moved toward a safe, scalable business model focused on excellence in home care.",
+          name: "Jeanice Lasta - Business Owner",
+          role: "Torres, RS",
+          image: "/assets/testimonials/JeaniceLasta.jpeg",
+        },
+        {
+          quote: "I am an APOIAR client and can say with complete confidence: this is the partner you can truly trust. I use their commercial module, delivered with dedication, responsibility, and strong commitment. With care, attention, and a real drive to help the client grow. More than an excellent service provider, they are a partner who walks alongside you. Congratulations on the serious work and the friendship built throughout this partnership.",
+          name: "Rita De Cassia Audickas - Nurse",
+          role: "Sao Caetano do Sul, SP",
+        },
+        {
+          quote: "We have a great partnership with Apoiar. We currently use the commercial module and are very satisfied with the conversion results achieved. This partnership gave us confidence to delegate a highly important activity within the company without any negative impact. I highly recommend Apoiar, not only for the Commercial module but also for all the others they offer.",
+          name: "Emerson Ferreira - Director",
+          role: "Sao Paulo, SP",
+          image: "/assets/testimonials/EmersonFerreira.jpeg",
         }
 
       ],
@@ -1329,13 +1359,37 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "La consultoria que recibi de Apoiar fue clave para mejorar estrategias operativas, comerciales y de marketing de mi unidad. Con su apoyo, amplie significativamente el alcance y la adquisicion de nuevos clientes. Es un socio indispensable para el exito y crecimiento del negocio.",
-          name: "Artur Costa - Empresaria",
+          name: "Arthur Costa - Empresario",
           role: "Marica, RJ",
+          image: "/assets/testimonials/ArthurCosta.jpeg",
         },
         {
           quote: "Profesionalismo y competencia. Una empresa que se preparo para apoyar a empresarios en sus principales brechas.",
           name: "Wellington Neto - Empresario",
           role: "Ponta Grossa, PR",
+        },
+        {
+          quote: "Con Apoiar, pude optimizar mi tiempo para desempeñar las actividades de gestión, ya que los profesionales capacitados y calificados de Apoiar asumieron las tareas administrativas y de atención al cliente con total eficiencia.",
+          name: "Eliana Abdalla - Empresaria",
+          role: "Sao Luis, MA",
+          image: "/assets/testimonials/ElianaAbdalla.jpeg",
+        },
+        {
+          quote: "Apoiar profesionalizo nuestra operación. Superamos los desafios de gestión y avanzamos hacia un modelo de negocio seguro, escalable y enfocado en la excelencia del cuidado domiciliario.",
+          name: "Jeanice Lasta - Empresaria",
+          role: "Torres, RS",
+          image: "/assets/testimonials/JeaniceLasta.jpeg",
+        },
+        {
+          quote: "Soy cliente de APOIAR y lo digo con total certeza: es ese socio en quien realmente se puede confiar. Utilizo el modulo comercial, realizado con dedicación, responsabilidad y mucho compromiso. Con cuidado, atención y una verdadera voluntad de ayudar al cliente a crecer. Mas que un excelente proveedor de servicios, es un socio que camina junto. Felicitaciones por el trabajo serio y por la amistad construida a lo largo de esta alianza.",
+          name: "Rita De Cassia Audickas - Enfermera",
+          role: "Sao Caetano do Sul, SP",
+        },
+        {
+          quote: "Tenemos una gran alianza con Apoiar. Actualmente usamos el modulo comercial y estamos muy satisfechos con la conversión obtenida. Esta alianza nos dio seguridad para delegar una actividad muy importante dentro de la empresa sin sufrir ningun impacto negativo. Recomiendo ampliamente a Apoiar, no solo en el modulo Comercial sino tambien en todos los demas que ofrecen.",
+          name: "Emerson Ferreira - Director",
+          role: "Sao Paulo, SP",
+          image: "/assets/testimonials/EmersonFerreira.jpeg",
         }
       ],
     },

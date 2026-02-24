@@ -556,9 +556,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "A consultoria que recebi da Apoiar foi fundamental para aprimorar estratégias operacionais, comerciais e de marketing para a minha unidade. Com o apoio deles, consegui expandir significativamente o alcance e a aquisição de novos clientes. É um parceiro indispensável para o sucesso e crescimento do nosso negócio.",
-          name: "Arthur Costa - Empresário",
+          name: "Artur Costa - Empresário",
           role: "Maricá - RJ",
-          image: "/assets/testimonials/ArthurCosta.jpeg",
+          image: "/assets/testimonials/ArturCosta.jpeg",
         },
         {
           quote: "Profissionalismo e competência. Uma empresa que pensou e se preparou para apoiar empresários em seus principais gaps.",
@@ -957,9 +957,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "The consulting I received from Apoiar was essential to improve operational, commercial, and marketing strategies for my unit. With their support, I significantly expanded reach and new client acquisition. They are an indispensable partner for business success and growth.",
-          name: "Arthur Costa - Business Owner",
+          name: "Artur Costa - Business Owner",
           role: "Marica, RJ",
-          image: "/assets/testimonials/ArthurCosta.jpeg",
+          image: "/assets/testimonials/ArturCosta.jpeg",
         },
         {
           quote: "Professionalism and competence. A company that prepared itself to support business owners in their main gaps.",
@@ -1359,9 +1359,9 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           quote: "La consultoria que recibi de Apoiar fue clave para mejorar estrategias operativas, comerciales y de marketing de mi unidad. Con su apoyo, amplie significativamente el alcance y la adquisicion de nuevos clientes. Es un socio indispensable para el exito y crecimiento del negocio.",
-          name: "Arthur Costa - Empresario",
+          name: "Artur Costa - Empresario",
           role: "Marica, RJ",
-          image: "/assets/testimonials/ArthurCosta.jpeg",
+          image: "/assets/testimonials/ArturCosta.jpeg",
         },
         {
           quote: "Profesionalismo y competencia. Una empresa que se preparo para apoyar a empresarios en sus principales brechas.",

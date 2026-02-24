@@ -94,7 +94,7 @@ footer[id] {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #444444 0%, #666666 100%);
+  background: linear-gradient(135deg, #65a30d 0%, #84cc16 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -556,7 +556,7 @@ export function Navbar({ content, locale }: NavbarProps) {
             </a>
             <a
               href={`/#${content.contact.sectionId}`}
-              className="inline-flex rounded-full bg-gradient-to-br from-[#444444] to-[#666666] hover:from-[#333333] hover:to-[#555555] px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex rounded-full bg-lime-500 px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-lime-600 hover:shadow-lg"
             >
               {content.ui.navbarContactCta}
             </a>
@@ -738,7 +738,7 @@ export function Navbar({ content, locale }: NavbarProps) {
             </a>
             <a
               href={`/#${content.contact.sectionId}`}
-              className="block rounded-full bg-gradient-to-br from-[#444444] to-[#666666] hover:from-[#333333] hover:to-[#555555] px-6 py-3 text-center font-semibold text-white transition-all"
+              className="block rounded-full bg-lime-500 px-6 py-3 text-center font-semibold text-white transition-all hover:bg-lime-600"
               onClick={() => setMobileMenuOpen(false)}
             >
               {content.ui.navbarContactCta}

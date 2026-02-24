@@ -101,7 +101,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
         <ApoioMei content={content.apoioMei} />
         <Resultados content={content.resultados} />
         <Testimonials content={content.testimonials} />
-        <Tecnologia content={content.tecnologia} />
+        <Tecnologia content={content.tecnologia} ui={content.ui} />
         <CTA content={content.cta} contact={content.contact} />
         <Footer content={content} />
         <WhatsAppButton href={content.contact.whatsappUrl} ariaLabel={content.ui.whatsappAriaLabel} />

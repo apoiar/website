@@ -49,6 +49,8 @@ export type ContentSchema = {
     footerContactTitle: string;
     footerLocationLabel: string;
     footerCoverageLabel: string;
+    appAccessSystemLabel: string;
+    appAccessSystemAriaPrefix: string;
     whatsappText: string;
     rightsReserved: string;
     whatsappAriaLabel: string;
@@ -221,8 +223,8 @@ const BASE_SOCIAL_LINKS: SocialLink[] = [
   { id: "facebook", label: "Facebook", href: "#" },
   {
     id: "google-business",
-    label: "Google Meu Negocio",
-    href: "#",
+    label: "Google Meu Negócio",
+    href: "https://www.google.com/maps/search/?api=1&query=Avenida+Gerem%C3%A1rio+Dantas%2C+1400%2FLoja+216+-+Freguesia+%28Jacarepagu%C3%A1%29+-+Rio+de+Janeiro+-+RJ+-+CEP%3A+22.760-401",
   },
 ];
 
@@ -271,8 +273,10 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Links Rápidos",
       footerContactTitle: "Contato",
-      footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
-      footerCoverageLabel: "Sede no Rio de Janeiro com atendimento em todo o Brasil (online).",
+      footerLocationLabel: "Avenida Geremário Dantas, 1400/Loja 216 - Freguesia (Jacarepaguá) - Rio de Janeiro - RJ - CEP: 22.760-401",
+      footerCoverageLabel: "Atendimento em todo o Brasil (online).",
+      appAccessSystemLabel: "Acessar Sistema",
+      appAccessSystemAriaPrefix: "Acessar sistema do",
       whatsappText: "WhatsApp",
       rightsReserved: "Todos os direitos reservados.",
       whatsappAriaLabel: "Falar no WhatsApp",
@@ -292,7 +296,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
           {
             group: "BPO",
-            label: "Outras áreas operacionais - em sua empresa ou na nossa estrutura.",
+            label: "Terceirização de mão de obra",
             href: "#apoio",
           },
           { group: "Apoio ao MEI", label: "Abertura de CNPJ", href: "#apoio-mei" },
@@ -414,6 +418,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           title: "Comercial",
           description:
             "Escale suas vendas com nossos especialistas e converta mais leads em clientes reais.",
+        },
+        {
+          title: "Terceirização de mão de obra",
+          description:
+            "Na sua empresa, no seu cliente ou aqui em nossa estrutura, deixe a equipe operacional de qualquer área conosco! E não se preocupe mais com questões trabalhistas, departamento pessoal ou gestão de pessoas; somos seu parceiro ideal para fazer seu negócio decolar.",
         },
       ],
       highlight: {
@@ -659,8 +668,10 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Language",
       footerQuickLinksTitle: "Quick Links",
       footerContactTitle: "Contact",
-      footerLocationLabel: "Rio de Janeiro, RJ - Brazil",
-      footerCoverageLabel: "Headquartered in Rio de Janeiro serving all Brazil (online).",
+      footerLocationLabel: "Avenida Geremário Dantas, 1400/Loja 216 - Freguesia (Jacarepaguá) - Rio de Janeiro - RJ - CEP: 22.760-401",
+      footerCoverageLabel: "Serving all Brazil (online).",
+      appAccessSystemLabel: "Access System",
+      appAccessSystemAriaPrefix: "Access system for",
       whatsappText: "WhatsApp",
       rightsReserved: "All rights reserved.",
       whatsappAriaLabel: "Chat on WhatsApp",
@@ -680,7 +691,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "BPO", label: "Commercial: Scale sales with our experts", href: "#apoio" },
           {
             group: "BPO",
-            label: "Other operational areas - in your company or in our structure.",
+            label: "Workforce outsourcing",
             href: "#apoio",
           },
           { group: "MEI Support", label: "Company Opening", href: "#apoio-mei" },
@@ -802,6 +813,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           title: "Commercial",
           description:
             "Scale your sales with our experts and convert more leads into real customers.",
+        },
+        {
+          title: "Workforce outsourcing",
+          description:
+            "At your company, at your client site, or here in our own structure, leave the operational team of any area with us. Stop worrying about labor issues, payroll administration, or people management; we are your ideal partner to help your business take off.",
         },
       ],
       highlight: {
@@ -1030,8 +1046,10 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Enlaces Rápidos",
       footerContactTitle: "Contacto",
-      footerLocationLabel: "Rio de Janeiro, RJ - Brasil",
-      footerCoverageLabel: "Sede en Río de Janeiro con atención en todo Brasil (en línea).",
+      footerLocationLabel: "Avenida Geremário Dantas, 1400/Loja 216 - Freguesia (Jacarepaguá) - Rio de Janeiro - RJ - CEP: 22.760-401",
+      footerCoverageLabel: "Atención en todo Brasil (en línea).",
+      appAccessSystemLabel: "Acceder al sistema",
+      appAccessSystemAriaPrefix: "Acceder al sistema de",
       whatsappText: "WhatsApp",
       rightsReserved: "Todos los derechos reservados.",
       whatsappAriaLabel: "Hablar por WhatsApp",
@@ -1051,7 +1069,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "BPO", label: "Comercial: Escala tus ventas con nuestros especialistas", href: "#apoio" },
           {
             group: "BPO",
-            label: "Otras areas operativas - en su empresa o en nuestra estructura.",
+            label: "Tercerización de mano de obra",
             href: "#apoio",
           },
           { group: "Apoyo MEI", label: "Apertura de Empresa", href: "#apoio-mei" },
@@ -1173,6 +1191,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           title: "Comercial",
           description:
             "Escale sus ventas con nuestros especialistas y convierta más clientes potenciales en clientes reales.",
+        },
+        {
+          title: "Tercerización de mano de obra",
+          description:
+            "En su empresa, en su cliente o aquí en nuestra estructura, deje con nosotros el equipo operativo de cualquier área. Y no se preocupe más por temas laborales, administración de personal o gestión de personas; somos su socio ideal para impulsar su negocio.",
         },
       ],
       highlight: {

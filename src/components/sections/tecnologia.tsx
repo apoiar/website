@@ -4,9 +4,10 @@ import type { ContentSchema } from "@/config/content";
 
 type TecnologiaProps = {
   content: ContentSchema["tecnologia"];
+  ui: Pick<ContentSchema["ui"], "appAccessSystemAriaPrefix" | "appAccessSystemLabel">;
 };
 
-export function Tecnologia({ content }: TecnologiaProps) {
+export function Tecnologia({ content, ui }: TecnologiaProps) {
   return (
     <section id={content.sectionId} className="py-24 lg:py-32 bg-warm-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -66,12 +67,12 @@ export function Tecnologia({ content }: TecnologiaProps) {
                   {hasSingleDestination ? (
                     <a
                       href={app.appStoreUrl}
-                      aria-label={`Acessar site do ${app.name}`}
+                      aria-label={`${ui.appAccessSystemAriaPrefix} ${app.name}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center rounded-full bg-lime-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-lime-600"
                     >
-                      Acessar site
+                      {ui.appAccessSystemLabel}
                     </a>
                   ) : (
                     <>

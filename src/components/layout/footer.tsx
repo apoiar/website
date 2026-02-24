@@ -24,6 +24,7 @@ function SocialIcon({ id }: { id: ContentSchema["socialLinks"][number]["id"] }) 
 
 export function Footer({ content }: FooterProps) {
   const { brand, contact, footerLegalLinks, footerQuickLinks, socialLinks, ui } = content;
+  const googleBusinessLink = socialLinks.find((link) => link.id === "google-business")?.href ?? "#";
 
   const formatLink = (href: string) => {
     if (href.startsWith("http") || href.startsWith("mailto")) return href;
@@ -120,13 +121,20 @@ export function Footer({ content }: FooterProps) {
               <li className="flex flex-col gap-1">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-stone-400">
+                  <a
+                    href={googleBusinessLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="max-w-xs text-sm leading-relaxed text-stone-400 hover:text-white transition-colors"
+                  >
                     {ui.footerLocationLabel}
-                  </span>
+                  </a>
                 </div>
-                <span className="text-stone-500 text-sm ml-8">
-                  {ui.footerCoverageLabel}
-                </span>
+                {ui.footerCoverageLabel ? (
+                  <span className="text-stone-500 text-sm ml-8">
+                    {ui.footerCoverageLabel}
+                  </span>
+                ) : null}
               </li>
             </ul>
           </div>

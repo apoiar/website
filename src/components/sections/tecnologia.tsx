@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Apple, BookOpenText, MessageSquareMore, Play, Smartphone } from "lucide-react";
 import type { ContentSchema } from "@/config/content";
+import { TecnologiaScreenshotsCarousel } from "@/components/sections/tecnologia-screenshots-carousel";
 
 type TecnologiaProps = {
   content: ContentSchema["tecnologia"];
@@ -23,8 +24,10 @@ export function Tecnologia({ content, ui }: TecnologiaProps) {
 
         <div className="grid gap-8 max-w-4xl mx-auto">
           {content.apps.map((app) => {
+            const isKito = app.name.toLowerCase().includes("kito");
             const AppMark = app.name.toLowerCase().includes("kito") ? BookOpenText : MessageSquareMore;
             const appIconImage = app.icon.startsWith("/") ? app.icon : null;
+            const hasScreenshots = Boolean(app.screenshots?.length);
             const hasSingleDestination = app.appStoreUrl === app.playStoreUrl;
             const appAnchorId = app.name.toLowerCase().includes("kito")
               ? "app-kito"
@@ -38,7 +41,7 @@ export function Tecnologia({ content, ui }: TecnologiaProps) {
                 id={appAnchorId}
                 className="scroll-mt-28 rounded-3xl border border-stone-200/70 bg-white p-8 shadow-soft transition-all hover-lift"
               >
-                <div className="flex items-start justify-between gap-6">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex-1">
                     <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-100">
                       <Smartphone className="h-7 w-7 text-stone-600" />
@@ -47,21 +50,29 @@ export function Tecnologia({ content, ui }: TecnologiaProps) {
                     <p className="mt-3 text-stone-600 leading-relaxed">{app.description}</p>
                   </div>
 
-                  <div className="shrink-0 h-24 w-24 overflow-hidden rounded-xl border border-stone-200">
-                    {appIconImage ? (
-                      <Image
-                        src={appIconImage}
-                        alt={`${app.name} icon`}
-                        width={96}
-                        height={96}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-stone-50">
-                        <AppMark className="h-8 w-8 text-stone-600" />
-                      </div>
-                    )}
-                  </div>
+                  {hasScreenshots && app.screenshots ? (
+                    <TecnologiaScreenshotsCarousel appName={app.name} screenshots={app.screenshots} />
+                  ) : (
+                    <div
+                      className={`shrink-0 overflow-hidden rounded-xl border border-stone-200 ${
+                        isKito ? "h-28 w-28" : "h-24 w-24"
+                      }`}
+                    >
+                      {appIconImage ? (
+                        <Image
+                          src={appIconImage}
+                          alt={`${app.name} icon`}
+                          width={isKito ? 112 : 96}
+                          height={isKito ? 112 : 96}
+                          className={`h-full w-full ${isKito ? "bg-white p-2 object-contain" : "object-cover"}`}
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-stone-50">
+                          <AppMark className="h-8 w-8 text-stone-600" />
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   {hasSingleDestination ? (

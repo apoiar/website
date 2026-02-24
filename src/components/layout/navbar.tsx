@@ -358,9 +358,8 @@ export function Navbar({ content, locale }: NavbarProps) {
                     <div
                       role="menu"
                       aria-label={link.label}
-                      className={`absolute left-0 top-full mt-2 w-[min(92vw,780px)] max-w-[calc(100vw-3rem)] rounded-2xl border border-stone-100 bg-white p-4 shadow-xl transition-all duration-200 ${
-                        isPortfolioOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
-                      }`}
+                      className={`absolute left-0 top-full mt-2 w-[min(92vw,780px)] max-w-[calc(100vw-3rem)] rounded-2xl border border-stone-100 bg-white p-4 shadow-xl transition-all duration-200 ${isPortfolioOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+                        }`}
                     >
                       <div className="grid items-start grid-cols-1 gap-4 md:grid-cols-[220px_minmax(0,1fr)]">
                         <div className="rounded-xl border border-stone-100 bg-stone-50 p-2">
@@ -400,11 +399,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                                         portfolioTriggerRef.current?.focus();
                                       }
                                     }}
-                                    className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-semibold transition-colors ${
-                                      isActive
+                                    className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-semibold transition-colors ${isActive
                                         ? "bg-lime-100 text-lime-700"
                                         : "text-stone-600 hover:bg-lime-50 hover:text-lime-700"
-                                    }`}
+                                      }`}
                                   >
                                     <span>{group.label}</span>
                                     <ChevronRight className="h-4 w-4" />
@@ -526,11 +524,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                         type="button"
                         role="menuitem"
                         onClick={() => handleLocaleChange(optionLocale)}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                          isActive
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${isActive
                             ? "bg-lime-100 text-lime-700"
                             : "text-stone-700 hover:bg-stone-100 hover:text-lime-700"
-                        }`}
+                          }`}
                       >
                         <span className="inline-flex items-center gap-2">
                           <Image
@@ -559,7 +556,7 @@ export function Navbar({ content, locale }: NavbarProps) {
             </a>
             <a
               href={`/#${content.contact.sectionId}`}
-              className="inline-flex rounded-full bg-lime-500 px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-lime-600 hover:shadow-lg"
+              className="inline-flex rounded-full bg-gradient-to-br from-[#444444] to-[#666666] hover:from-[#333333] hover:to-[#555555] px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               {content.ui.navbarContactCta}
             </a>
@@ -611,11 +608,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                             <div key={group.key} className="overflow-hidden rounded-xl border border-stone-100">
                               <button
                                 type="button"
-                                className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm font-semibold transition-colors ${
-                                  isOpen
+                                className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm font-semibold transition-colors ${isOpen
                                     ? "bg-lime-100 text-lime-700"
                                     : "bg-stone-50 text-stone-700 hover:bg-lime-50 hover:text-lime-700"
-                                }`}
+                                  }`}
                                 onClick={() => {
                                   setMobileActivePortfolioGroup((current) =>
                                     current === group.key ? null : group.key,
@@ -708,11 +704,10 @@ export function Navbar({ content, locale }: NavbarProps) {
                         type="button"
                         role="menuitem"
                         onClick={() => handleLocaleChange(optionLocale)}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                          isActive
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${isActive
                             ? "bg-lime-100 text-lime-700"
                             : "text-stone-700 hover:bg-stone-100 hover:text-lime-700"
-                        }`}
+                          }`}
                       >
                         <span className="inline-flex items-center gap-2">
                           <Image
@@ -743,7 +738,7 @@ export function Navbar({ content, locale }: NavbarProps) {
             </a>
             <a
               href={`/#${content.contact.sectionId}`}
-              className="block rounded-full bg-lime-500 px-6 py-3 text-center font-semibold text-white transition-all hover:bg-lime-600"
+              className="block rounded-full bg-gradient-to-br from-[#444444] to-[#666666] hover:from-[#333333] hover:to-[#555555] px-6 py-3 text-center font-semibold text-white transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
               {content.ui.navbarContactCta}

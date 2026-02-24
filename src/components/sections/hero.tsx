@@ -9,12 +9,12 @@ type HeroProps = {
 export function Hero({ content }: HeroProps) {
   return (
     <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-lime-50/50 via-white to-warm-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-100/50 via-white to-warm-50" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-8">
             <div className="fade-in-up">
-              <span className="inline-flex items-center px-4 py-2 bg-lime-100 text-lime-700 rounded-full text-sm font-semibold mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-stone-100 text-stone-700 rounded-full text-sm font-semibold mb-6">
                 <HeartHandshake className="w-4 h-4 mr-2" />
                 {content.badge}
               </span>
@@ -28,7 +28,7 @@ export function Hero({ content }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-4 fade-in-up-delay-2">
               <a
                 href={content.primaryCta.href}
-                className="inline-flex items-center justify-center bg-lime-500 hover:bg-lime-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center bg-gradient-to-br from-[#444444] to-[#666666] hover:from-[#333333] hover:to-[#555555] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 {content.primaryCta.label}
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -79,8 +79,8 @@ export function Hero({ content }: HeroProps) {
 
             <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-soft p-6 max-w-xs hidden lg:block border border-stone-200/60">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-lime-100 rounded-xl flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-lime-600" />
+                <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-stone-600" />
                 </div>
                 <div>
                   <p className="font-bold text-warm-900">{content.productivityStat.value}</p>
@@ -89,7 +89,7 @@ export function Hero({ content }: HeroProps) {
               </div>
             </div>
 
-            <div className="absolute -top-4 -right-4 bg-lime-500 rounded-2xl shadow-lg p-4 hidden lg:block">
+            <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#444444] to-[#666666] rounded-2xl shadow-lg p-4 hidden lg:block">
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
           </div>

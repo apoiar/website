@@ -26,8 +26,8 @@ export function Mentoria({ content }: MentoriaProps) {
               </div>
               <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-stone-200/60">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-lime-100 rounded-full flex items-center justify-center">
-                    <User className="w-6 h-6 text-lime-600" />
+                  <div className="w-14 h-14 bg-stone-100 rounded-full flex items-center justify-center">
+                    <User className="w-6 h-6 text-stone-600" />
                   </div>
                   <div>
                     <p className="font-bold text-warm-900 text-lg">{content.mentor.name}</p>
@@ -40,7 +40,7 @@ export function Mentoria({ content }: MentoriaProps) {
 
           <div className="order-1 lg:order-2 space-y-8">
             <div>
-              <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
+              <span className="text-stone-500 font-semibold text-sm uppercase tracking-wider">
                 {content.badge}
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-900 mt-4 leading-tight">
@@ -55,10 +55,10 @@ export function Mentoria({ content }: MentoriaProps) {
                 return (
                   <div
                     key={point.title}
-                    className="flex items-start gap-4 hover-lift p-4 rounded-2xl hover:bg-lime-50/50 transition-colors cursor-pointer"
+                    className="group flex items-start gap-4 p-5 rounded-2xl border border-transparent hover:border-stone-200/80 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                   >
-                    <div className="w-12 h-12 bg-lime-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-lime-600" />
+                    <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-lime-50 transition-colors">
+                      <Icon className="w-5 h-5 text-stone-600 group-hover:text-lime-600 transition-colors" />
                     </div>
                     <div>
                       <h3 className="font-bold text-warm-900 text-lg">{point.title}</h3>

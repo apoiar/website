@@ -789,11 +789,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         "Let us take care of the operational tasks. We handle operations so you can stop worrying about day-to-day management.",
       cards: [
         {
-          title: "Work Schedules",
-          description:
-            "Work schedules and attendance tracking so you do not have to worry about delays and absences.",
-        },
-        {
           title: "Administrative",
           description:
             "Documentation, compliance, procurement, vendors, and all bureaucracy that takes your time away from growth.",
@@ -1164,11 +1159,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       description:
         "Deja las tareas operativas con nosotros. Nos ocupamos de todo para que no tengas que preocuparte por la gestion operativa.",
       cards: [
-        {
-          title: "Horarios de Trabajo",
-          description:
-            "Organizacion de horarios y control de asistencia para que no tengas que preocuparte por retrasos y ausencias.",
-        },
         {
           title: "Administrativo",
           description:

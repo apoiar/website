@@ -59,7 +59,7 @@ export function Testimonials({ content }: TestimonialsProps) {
     <section className="py-24 lg:py-32 bg-warm-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-lime-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-stone-500 font-semibold text-sm uppercase tracking-wider">
             {content.badge}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-900 mt-4">
@@ -102,7 +102,7 @@ export function Testimonials({ content }: TestimonialsProps) {
           </div>
 
           <button
-            className="absolute left-0 md:left-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-lime-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
+            className="absolute left-0 md:left-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-stone-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
             onClick={scrollPrev}
             disabled={prevBtnDisabled}
           >
@@ -110,7 +110,7 @@ export function Testimonials({ content }: TestimonialsProps) {
           </button>
 
           <button
-            className="absolute right-0 md:right-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-lime-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
+            className="absolute right-0 md:right-2 top-[45%] md:top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-stone-600 hover:text-stone-600 hover:scale-110 transition-all z-10 disabled:opacity-50 disabled:scale-100 hidden md:flex border border-stone-200"
             onClick={scrollNext}
             disabled={nextBtnDisabled}
           >
@@ -121,7 +121,7 @@ export function Testimonials({ content }: TestimonialsProps) {
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all ${index === selectedIndex ? "bg-lime-600 w-6" : "bg-stone-300 hover:bg-lime-400"
+                className={`w-3 h-3 rounded-full transition-all ${index === selectedIndex ? "bg-stone-600 w-6" : "bg-stone-300 hover:bg-stone-400"
                   }`}
                 onClick={() => scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}

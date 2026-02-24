@@ -10,7 +10,7 @@ export function CTA({ content, contact }: CTAProps) {
   return (
     <section id={contact.sectionId} className="py-24 lg:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-lime-500 to-lime-600 rounded-[2.5rem] p-12 lg:p-16 text-center text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[var(--color-warm-800)] to-[#666666] rounded-[2.5rem] p-12 lg:p-16 text-center text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 

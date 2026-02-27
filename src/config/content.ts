@@ -236,7 +236,7 @@ const BASE_IMAGES = {
     height: 600,
   },
   mentor: {
-    src: "/assets/RicardoFurtado.jpeg",
+    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=750&fit=crop",
     width: 600,
     height: 750,
   },
@@ -292,8 +292,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portfólio",
         subItems: [
-          { group: "BPO", label: "Apoio: Um assistente administrativo para chamar de seu", href: "#apoio" },
-          { group: "BPO", label: "Atendimento: Recurso dedicado ou compartilhado", href: "#apoio" },
+          { group: "BPO", label: "Apoio: Dedicado ou compartilhado, um assistente administrativo para chamar de seu!", href: "#apoio" },
+          { group: "BPO", label: "Atendimento: Nunca mais deixe seu cliente ou contato esperando!", href: "#apoio" },
           { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
           {
             group: "BPO",
@@ -372,11 +372,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       description:
         "Imagine ter um experiente parceiro de negócios disponível para você, com encontros regulares por vídeo, linguagem acessível e suporte ilimitado via WhatsApp sempre que precisar.",
       mentor: {
-        name: "Ricardo Furtado",
+        name: "Mentor APOIAR",
         role: "Mentor & Fundador APOIAR",
         image: {
           ...BASE_IMAGES.mentor,
-          alt: "Ricardo Furtado - Mentor",
+          alt: "Mentor de negocios",
         },
       },
       points: [
@@ -697,8 +697,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portfolio",
         subItems: [
-          { group: "BPO", label: "Support: Your administrative assistant", href: "#apoio" },
-          { group: "BPO", label: "Customer Service: Online relationship center", href: "#apoio" },
+          { group: "BPO", label: "Support: Dedicated or shared, an administrative assistant to call your own!", href: "#apoio" },
+          { group: "BPO", label: "Customer Service: Never leave your client or contact waiting again!", href: "#apoio" },
           { group: "BPO", label: "Commercial: Scale sales with our experts", href: "#apoio" },
           {
             group: "BPO",
@@ -777,11 +777,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       description:
         "Imagine having an experienced business partner available to you, with regular video sessions, clear communication, and unlimited WhatsApp support whenever you need it.",
       mentor: {
-        name: "Ricardo Furtado",
+        name: "APOIAR Mentor",
         role: "Mentor & APOIAR Founder",
         image: {
           ...BASE_IMAGES.mentor,
-          alt: "Ricardo Furtado - Mentor",
+          alt: "Business mentor",
         },
       },
       points: [
@@ -1103,8 +1103,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         href: "/",
         label: "Portafolio",
         subItems: [
-          { group: "BPO", label: "Apoyo: Tu asistente administrativo", href: "#apoio" },
-          { group: "BPO", label: "Atención: Central de relacionamiento online", href: "#apoio" },
+          { group: "BPO", label: "Apoyo: Dedicado o compartido, un asistente administrativo para llamar suyo!", href: "#apoio" },
+          { group: "BPO", label: "Atención: Nunca más dejes a tu cliente o contacto esperando!", href: "#apoio" },
           { group: "BPO", label: "Comercial: Escala tus ventas con nuestros especialistas", href: "#apoio" },
           {
             group: "BPO",
@@ -1183,11 +1183,11 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       description:
         "Imagina tener un socio de negocios con experiencia disponible para ti, con reuniones por video, lenguaje claro y soporte ilimitado por WhatsApp cuando lo necesites.",
       mentor: {
-        name: "Ricardo Furtado",
+        name: "Mentor APOIAR",
         role: "Mentor y Fundador de APOIAR",
         image: {
           ...BASE_IMAGES.mentor,
-          alt: "Ricardo Furtado - Mentor",
+          alt: "Mentor de negocios",
         },
       },
       points: [

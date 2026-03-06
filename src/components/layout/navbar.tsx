@@ -11,6 +11,7 @@ import { LOCALE_COOKIE, LOCALES, type Locale } from "@/config/i18n";
 type NavbarProps = {
   content: ContentSchema;
   locale: Locale;
+  onLocaleChange?: (locale: Locale) => void;
 };
 
 type PortfolioGroup = {
@@ -49,7 +50,7 @@ function isPointInTriangle(point: Point, a: Point, b: Point, c: Point) {
   return !(hasNegative && hasPositive);
 }
 
-export function Navbar({ content, locale }: NavbarProps) {
+export function Navbar({ content, locale, onLocaleChange }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopLanguageOpen, setDesktopLanguageOpen] = useState(false);
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
@@ -170,6 +171,11 @@ export function Navbar({ content, locale }: NavbarProps) {
     setMobileMenuOpen(false);
     setDesktopLanguageOpen(false);
     setMobileLanguageOpen(false);
+
+    if (onLocaleChange) {
+      onLocaleChange(nextLocale);
+      return;
+    }
 
     router.refresh();
   };

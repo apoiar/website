@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Apoio,
   ApoioMei,
@@ -14,14 +16,25 @@ import {
 import { getContent } from "@/config/content";
 import { getLangTag, type Locale } from "@/config/i18n";
 import { SITE_URL, getSiteMeta } from "@/config/site";
+import { getLocaleFromCookie } from "@/lib/i18n/client-locale";
+import { useEffect, useState } from "react";
 
 type LocalizedHomePageProps = {
   locale: Locale;
 };
 
 export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
-  const content = getContent(locale);
-  const siteMeta = getSiteMeta(locale);
+  const [activeLocale, setActiveLocale] = useState<Locale>(locale);
+
+  useEffect(() => {
+    const localeFromCookie = getLocaleFromCookie();
+    if (localeFromCookie) {
+      setActiveLocale(localeFromCookie);
+    }
+  }, []);
+
+  const content = getContent(activeLocale);
+  const siteMeta = getSiteMeta(activeLocale);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -68,7 +81,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
         publisher: {
           "@id": `${SITE_URL}/#organization`,
         },
-        inLanguage: getLangTag(locale),
+        inLanguage: getLangTag(activeLocale),
       },
       {
         "@type": "WebPage",
@@ -82,7 +95,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
           "@id": `${SITE_URL}/#organization`,
         },
         description: siteMeta.description,
-        inLanguage: getLangTag(locale),
+        inLanguage: getLangTag(activeLocale),
       },
     ],
   };
@@ -94,7 +107,7 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen bg-warm-50 font-sans">
-        <Navbar content={content} locale={locale} />
+        <Navbar content={content} locale={activeLocale} onLocaleChange={setActiveLocale} />
         <Hero content={content.hero} />
         <Mentoria content={content.mentoria} />
         <Apoio content={content.apoio} />

@@ -1,8 +1,8 @@
 import { LocalizedHomePage } from "@/components/pages/localized-home-page";
-import { getServerLocale } from "@/lib/i18n/server-locale";
+import type { Locale } from "@/config/i18n";
 
-export default async function RootPage() {
-  const locale = await getServerLocale();
+export default function RootPage() {
+  const locale: Locale = "pt";
 
   return <LocalizedHomePage locale={locale} />;
 }

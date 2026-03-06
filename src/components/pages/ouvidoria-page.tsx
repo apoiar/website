@@ -1,19 +1,32 @@
+"use client";
+
 import { Footer, Navbar, WhatsAppButton, CTA } from "@/components";
 import { OuvidoriaForm } from "@/components/sections/ouvidoria-form";
 import { getContent } from "@/config/content";
 import type { Locale } from "@/config/i18n";
+import { getLocaleFromCookie } from "@/lib/i18n/client-locale";
+import { useEffect, useState } from "react";
 
 type OuvidoriaPageProps = {
   locale: Locale;
 };
 
 export function OuvidoriaPage({ locale }: OuvidoriaPageProps) {
-  const content = getContent(locale);
+  const [activeLocale, setActiveLocale] = useState<Locale>(locale);
+
+  useEffect(() => {
+    const localeFromCookie = getLocaleFromCookie();
+    if (localeFromCookie) {
+      setActiveLocale(localeFromCookie);
+    }
+  }, []);
+
+  const content = getContent(activeLocale);
   const ouvidoria = content.ouvidoria;
 
   return (
     <div className="min-h-screen bg-warm-50 font-sans">
-      <Navbar content={content} locale={locale} />
+      <Navbar content={content} locale={activeLocale} onLocaleChange={setActiveLocale} />
 
       <main className="mx-auto grid w-full max-w-7xl gap-10 px-6 pb-24 pt-32 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8">
         <section className="space-y-8">

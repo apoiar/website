@@ -1,14 +1,22 @@
 {
+  "functions": {
+    "source": "functions"
+  },
   "hosting": {
-    "source": ".",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "frameworksBackend": {
-      "region": "us-east1",
-      "invoker": "public"
-    }
+    "rewrites": [
+      {
+        "source": "/api/ouvidoria",
+        "function": {
+          "functionId": "ouvidoria",
+          "region": "us-east1"
+        }
+      }
+    ]
   }
 }

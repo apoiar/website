@@ -1,13 +1,15 @@
+"use client";
+
 import { Navbar, Footer, CTA, WhatsAppButton } from "@/components";
 import { getContent } from "@/config/content";
 import { type Locale } from "@/config/i18n";
-import { ReactNode } from "react";
+import { getLegalContent, type LegalPageType } from "@/config/legal-content";
+import { getLocaleFromCookie } from "@/lib/i18n/client-locale";
+import { useEffect, useState } from "react";
 
 type LegalPageLayoutProps = {
     locale: Locale;
-    title: string;
-    pageType?: "privacy" | "terms";
-    children: ReactNode;
+    pageType: LegalPageType;
 };
 
 const LEGAL_TITLE_BY_LOCALE = {
@@ -28,14 +30,24 @@ const LEGAL_NOTICE_BY_LOCALE = {
     es: "Esta es una traducción de cortesía. En caso de divergencia, prevalece la versión oficial en portugués.",
 } as const;
 
-export function LegalPageLayout({ locale, title, pageType, children }: LegalPageLayoutProps) {
-    const content = getContent(locale);
-    const localizedTitle = pageType ? LEGAL_TITLE_BY_LOCALE[pageType][locale] : title;
-    const localeNotice = locale === "pt" ? null : LEGAL_NOTICE_BY_LOCALE[locale];
+export function LegalPageLayout({ locale, pageType }: LegalPageLayoutProps) {
+    const [activeLocale, setActiveLocale] = useState<Locale>(locale);
+
+    useEffect(() => {
+        const localeFromCookie = getLocaleFromCookie();
+        if (localeFromCookie) {
+            setActiveLocale(localeFromCookie);
+        }
+    }, []);
+
+    const content = getContent(activeLocale);
+    const localizedTitle = LEGAL_TITLE_BY_LOCALE[pageType][activeLocale];
+    const localeNotice = activeLocale === "pt" ? null : LEGAL_NOTICE_BY_LOCALE[activeLocale];
+    const html = getLegalContent(activeLocale, pageType);
 
     return (
         <div className="min-h-screen bg-warm-50 font-sans flex flex-col">
-            <Navbar content={content} locale={locale} />
+            <Navbar content={content} locale={activeLocale} onLocaleChange={setActiveLocale} />
 
             <main className="flex-grow pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
                 <h1 className="text-4xl font-bold text-warm-900 mb-8">{localizedTitle}</h1>
@@ -45,7 +57,7 @@ export function LegalPageLayout({ locale, title, pageType, children }: LegalPage
                     </div>
                 ) : null}
                 <div className="bg-white rounded-3xl p-8 shadow-soft border border-stone-200/60">
-                    {children}
+                    <div className="legal-doc" dangerouslySetInnerHTML={{ __html: html }} />
                 </div>
             </main>
 

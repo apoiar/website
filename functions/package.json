@@ -1,0 +1,18 @@
+{
+  "name": "apoiar-web-functions",
+  "private": true,
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo \"No lint configured\"",
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.6.0",
+    "resend": "^6.9.2"
+  }
+}

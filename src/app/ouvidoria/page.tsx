@@ -1,8 +1,8 @@
 import { OuvidoriaPage } from "@/components/pages/ouvidoria-page";
-import { getServerLocale } from "@/lib/i18n/server-locale";
+import type { Locale } from "@/config/i18n";
 
-export default async function Page() {
-  const locale = await getServerLocale();
+export default function Page() {
+  const locale: Locale = "pt";
 
   return <OuvidoriaPage locale={locale} />;
 }

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "apoiarwebsite-dev"
-  }
+    "default": "apoiar-website"
+  },
+  "targets": {},
+  "etags": {}
 }

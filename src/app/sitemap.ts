@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/config/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["/", "/ouvidoria", "/politica-de-privacidade", "/termos-de-uso"];
 

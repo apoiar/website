@@ -315,7 +315,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Qualidade de Vida",
       description:
         "A gestão eficiente permite que você saia da caixa e invista tempo no que realmente importa. Você não precisa mais estar sozinho na gestão.",
-      secondaryCta: { href: "#apoio", label: "Como Funciona" },
+      primaryCta: { href: "#apoio", label: "Conheça Nossos Serviços" },
+      secondaryCta: { href: "#como-funciona", label: "Como Funciona" },
       transformedCount: "+150",
       transformedLabel: "empresários transformados",
       avatars: [
@@ -680,7 +681,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Quality of Life",
       description:
         "Efficient management lets you step back from daily chaos and invest time in what truly matters. You do not have to manage everything alone anymore.",
-      secondaryCta: { href: "#apoio", label: "How It Works" },
+      primaryCta: { href: "#apoio", label: "Discover Our Services" },
+      secondaryCta: { href: "#como-funciona", label: "How it works" },
       transformedCount: "+150",
       transformedLabel: "business owners transformed",
       avatars: [
@@ -1046,7 +1048,8 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Calidad de Vida",
       description:
         "La gestión eficiente te permite salir de la rutina operativa e invertir tiempo en lo que realmente importa. Ya no tienes que gestionar todo solo.",
-      secondaryCta: { href: "#apoio", label: "Como Funciona" },
+      primaryCta: { href: "#apoio", label: "onoce Nuestros Servicios" },
+      secondaryCta: { href: "#como-funciona", label: "Cómo funciona" },
       transformedCount: "+150",
       transformedLabel: "empresarios transformados",
       avatars: [

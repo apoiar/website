@@ -6,7 +6,6 @@ import {
   CTA,
   Footer,
   Hero,
-  Mentoria,
   Navbar,
   Resultados,
   Tecnologia,
@@ -109,7 +108,6 @@ export function LocalizedHomePage({ locale }: LocalizedHomePageProps) {
       <div className="min-h-screen bg-warm-50 font-sans">
         <Navbar content={content} locale={activeLocale} onLocaleChange={setActiveLocale} />
         <Hero content={content.hero} />
-        <Mentoria content={content.mentoria} />
         <Apoio content={content.apoio} />
         <ApoioMei content={content.apoioMei} />
         <Resultados content={content.resultados} />

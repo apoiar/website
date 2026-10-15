@@ -76,22 +76,6 @@ export type ContentSchema = {
       label: string;
     };
   };
-  mentoria: {
-    sectionId: string;
-    badge: string;
-    titlePrefix: string;
-    titleHighlight: string;
-    description: string;
-    mentor: {
-      name: string;
-      role: string;
-      image: ImageContent;
-    };
-    points: Array<{
-      title: string;
-      description: string;
-    }>;
-  };
   apoio: {
     sectionId: string;
     badge: string;
@@ -305,11 +289,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "Apoio ao MEI", label: "Emissão de DAS", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Declaração anual do MEI", href: "#apoio-mei" },
           { group: "Apoio ao MEI", label: "Encerramento do MEI", href: "#apoio-mei" },
-          { group: "Mentoria Empresarial", label: "Mentoria Empresarial", href: "#" },
-          { group: "Mentoria Empresarial", label: "\u2022 Pontual", href: "#mentoria" },
-          { group: "Mentoria Empresarial", label: "\u2022 Semanal", href: "#mentoria" },
-          { group: "Mentoria Empresarial", label: "\u2022 Quinzenal", href: "#mentoria" },
-          { group: "Mentoria Empresarial", label: "\u2022 Mensal", href: "#mentoria" },
           { group: "Tecnologia", label: "App Atender: Central de atendimento multichip via WhatsApp", href: "#tecnologia" },
           { group: "Tecnologia", label: "App Kito: Leitura, entretenimento e estímulos", href: "#app-kito" },
         ]
@@ -321,7 +300,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ouvidoria" },
-      { href: "#mentoria", label: "Mentoria" },
       { href: "#apoio-mei", label: "Apoio ao MEI" },
       { href: "#apoio", label: "Apoio no Dia a Dia" },
       { href: "#resultados", label: "Resultados" },
@@ -337,7 +315,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Qualidade de Vida",
       description:
         "A gestão eficiente permite que você saia da caixa e invista tempo no que realmente importa. Você não precisa mais estar sozinho na gestão.",
-      primaryCta: { href: "#mentoria", label: "Conheça Nossa Mentoria" },
       secondaryCta: { href: "#apoio", label: "Como Funciona" },
       transformedCount: "+150",
       transformedLabel: "empresários transformados",
@@ -363,39 +340,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         value: "+40%",
         label: "Produtividade média",
       },
-    },
-    mentoria: {
-      sectionId: "mentoria",
-      badge: "Mentoria Personalizada",
-      titlePrefix: "Um mentor que está sempre",
-      titleHighlight: "ao seu lado",
-      description:
-        "Imagine ter um experiente parceiro de negócios disponível para você, com encontros regulares por vídeo, linguagem acessível e suporte ilimitado via WhatsApp sempre que precisar.",
-      mentor: {
-        name: "Mentor APOIAR",
-        role: "Mentor & Fundador APOIAR",
-        image: {
-          ...BASE_IMAGES.mentor,
-          alt: "Mentor de negocios",
-        },
-      },
-      points: [
-        {
-          title: "Encontros por Vídeo",
-          description:
-            "Sessões semanais ou quinzenais para alinhar estratégias e resolver desafios em tempo real.",
-        },
-        {
-          title: "Suporte Ilimitado WhatsApp",
-          description:
-            "Uma via direta de comunicação para tirar dúvidas rápidas e receber orientação sempre que precisar.",
-        },
-        {
-          title: "Linguagem Acessível",
-          description:
-            "Sem jargões complicados. Conversamos na sua língua, focando no que realmente importa para o seu negócio.",
-        },
-      ],
     },
     apoio: {
       sectionId: "apoio",
@@ -508,7 +452,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           title: "Negócio escalável",
-          description: "Com processos otimizados e mentoria constante, seu negócio cresce.",
+          description: "Com processos otimizados, seu negócio cresce.",
         },
       ],
       beforeImage: {
@@ -710,11 +654,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "MEI Support", label: "DAS Issuance", href: "#apoio-mei" },
           { group: "MEI Support", label: "Annual Declaration", href: "#apoio-mei" },
           { group: "MEI Support", label: "Company Closure", href: "#apoio-mei" },
-          { group: "Mentorship", label: "Business Mentorship", href: "#" },
-          { group: "Mentorship", label: "\u2022 One-time", href: "#mentoria" },
-          { group: "Mentorship", label: "\u2022 Weekly", href: "#mentoria" },
-          { group: "Mentorship", label: "\u2022 Biweekly", href: "#mentoria" },
-          { group: "Mentorship", label: "\u2022 Monthly", href: "#mentoria" },
           { group: "Technology", label: "App Atender", href: "#tecnologia" },
           { group: "Technology", label: "App Kito", href: "#app-kito" },
         ]
@@ -726,7 +665,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ombudsman" },
-      { href: "#mentoria", label: "Mentorship" },
       { href: "#apoio-mei", label: "MEI Support" },
       { href: "#apoio", label: "Daily Operations Support" },
       { href: "#resultados", label: "Results" },
@@ -742,7 +680,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Quality of Life",
       description:
         "Efficient management lets you step back from daily chaos and invest time in what truly matters. You do not have to manage everything alone anymore.",
-      primaryCta: { href: "#mentoria", label: "Discover Our Mentorship" },
       secondaryCta: { href: "#apoio", label: "How It Works" },
       transformedCount: "+150",
       transformedLabel: "business owners transformed",
@@ -768,39 +705,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         value: "+40%",
         label: "Average productivity",
       },
-    },
-    mentoria: {
-      sectionId: "mentoria",
-      badge: "Personalized Mentorship",
-      titlePrefix: "A mentor who is always",
-      titleHighlight: "by your side",
-      description:
-        "Imagine having an experienced business partner available to you, with regular video sessions, clear communication, and unlimited WhatsApp support whenever you need it.",
-      mentor: {
-        name: "APOIAR Mentor",
-        role: "Mentor & APOIAR Founder",
-        image: {
-          ...BASE_IMAGES.mentor,
-          alt: "Business mentor",
-        },
-      },
-      points: [
-        {
-          title: "Video Sessions",
-          description:
-            "Weekly or biweekly sessions to align strategy and solve real challenges in real time.",
-        },
-        {
-          title: "Unlimited WhatsApp Support",
-          description:
-            "A direct communication channel for quick questions and guidance whenever you need it.",
-        },
-        {
-          title: "Plain Language",
-          description:
-            "No unnecessary jargon. We speak your language and focus on what truly matters for your business.",
-        },
-      ],
     },
     apoio: {
       sectionId: "apoio",
@@ -1116,11 +1020,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           { group: "Apoyo MEI", label: "Emisión de DAS", href: "#apoio-mei" },
           { group: "Apoyo MEI", label: "Declaración Anual", href: "#apoio-mei" },
           { group: "Apoyo MEI", label: "Cierre de Empresa", href: "#apoio-mei" },
-          { group: "Mentoria", label: "Mentoria Empresarial", href: "#" },
-          { group: "Mentoria", label: "\u2022 Puntual", href: "#mentoria" },
-          { group: "Mentoria", label: "\u2022 Semanal", href: "#mentoria" },
-          { group: "Mentoria", label: "\u2022 Quincenal", href: "#mentoria" },
-          { group: "Mentoria", label: "\u2022 Mensual", href: "#mentoria" },
           { group: "Tecnología", label: "App Atender", href: "#tecnologia" },
           { group: "Tecnología", label: "App Kito", href: "#app-kito" },
         ]
@@ -1132,7 +1031,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
     socialLinks: BASE_SOCIAL_LINKS,
     footerQuickLinks: [
       { href: "/ouvidoria", label: "Ouvidoria" },
-      { href: "#mentoria", label: "Mentoria" },
       { href: "#apoio-mei", label: "Apoyo MEI" },
       { href: "#apoio", label: "Apoyo Diario" },
       { href: "#resultados", label: "Resultados" },
@@ -1148,7 +1046,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       titleHighlight: "Calidad de Vida",
       description:
         "La gestión eficiente te permite salir de la rutina operativa e invertir tiempo en lo que realmente importa. Ya no tienes que gestionar todo solo.",
-      primaryCta: { href: "#mentoria", label: "Conoce Nuestra Mentoría" },
       secondaryCta: { href: "#apoio", label: "Como Funciona" },
       transformedCount: "+150",
       transformedLabel: "empresarios transformados",
@@ -1174,39 +1071,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         value: "+40%",
         label: "Productividad media",
       },
-    },
-    mentoria: {
-      sectionId: "mentoria",
-      badge: "Mentoría Personalizada",
-      titlePrefix: "Un mentor siempre",
-      titleHighlight: "a tu lado",
-      description:
-        "Imagina tener un socio de negocios con experiencia disponible para ti, con reuniones por video, lenguaje claro y soporte ilimitado por WhatsApp cuando lo necesites.",
-      mentor: {
-        name: "Mentor APOIAR",
-        role: "Mentor y Fundador de APOIAR",
-        image: {
-          ...BASE_IMAGES.mentor,
-          alt: "Mentor de negocios",
-        },
-      },
-      points: [
-        {
-          title: "Reuniones por Video",
-          description:
-            "Sesiones semanales o quincenales para alinear estrategias y resolver desafios en tiempo real.",
-        },
-        {
-          title: "Soporte Ilimitado por WhatsApp",
-          description:
-            "Un canal directo para resolver dudas rapidas y recibir orientacion siempre que lo necesites.",
-        },
-        {
-          title: "Lenguaje Claro",
-          description:
-            "Sin jerga complicada. Hablamos tu idioma y nos enfocamos en lo que realmente importa para tu negocio.",
-        },
-      ],
     },
     apoio: {
       sectionId: "apoio",
@@ -1319,7 +1183,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         },
         {
           title: "Negocio escalable",
-          description: "Con procesos optimizados y mentoria constante, tu negocio crece.",
+          description: "Con procesos optimizados, tu negocio crece.",
         },
       ],
       beforeImage: {

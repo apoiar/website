@@ -5,7 +5,6 @@ export { Apoio } from "@/components/sections/apoio";
 export { ApoioMei } from "@/components/sections/apoio-mei";
 export { CTA } from "@/components/sections/cta";
 export { Hero } from "@/components/sections/hero";
-export { Mentoria } from "@/components/sections/mentoria";
 export { OuvidoriaForm } from "@/components/sections/ouvidoria-form";
 export { Resultados } from "@/components/sections/resultados";
 export { Tecnologia } from "@/components/sections/tecnologia";

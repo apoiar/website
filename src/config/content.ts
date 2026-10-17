@@ -258,7 +258,7 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
       languageLabel: "Idioma",
       footerQuickLinksTitle: "Links Rápidos",
       footerContactTitle: "Contato",
-      footerLocationLabel: "Avenida Geremário Dantas, 1400/Loja 216 - Freguesia (Jacarepaguá) - Rio de Janeiro - RJ - CEP: 22.760-401",
+      footerLocationLabel: "Rua Tirol, 536/303 - Freguesia (Jacarepaguá) - Rio de Janeiro - RJ - CEP: 22.750-009",
       footerCoverageLabel: "Atendimento em todo o Brasil (online).",
       appAccessSystemLabel: "Acessar Sistema",
       appAccessSystemAriaPrefix: "Acessar sistema do",
@@ -277,8 +277,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         label: "Portfólio",
         subItems: [
           { group: "BPO", label: "Apoio: Dedicado ou compartilhado, um assistente administrativo para chamar de seu!", href: "#apoio" },
-          { group: "BPO", label: "Atendimento: Nunca mais deixe seu cliente ou contato esperando!", href: "#apoio" },
-          { group: "BPO", label: "Comercial: Escale suas vendas com nossos especialistas", href: "#apoio" },
           {
             group: "BPO",
             label: "Terceirização de mão de obra",
@@ -354,16 +352,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           title: "Administrativo",
           description:
             "Recurso dedicado ou compartilhado! Tenha um assistente administrativo para fazer as tarefas operacionais enquanto você foca no estratégico.",
-        },
-        {
-          title: "Atendimento",
-          description:
-            "Documentos, contratos, escalas de trabalho, contato com clientes e fornecedores, triagem, recrutamento e seleção de novos talentos... deixe todo o operacional conosco!",
-        },
-        {
-          title: "Comercial",
-          description:
-            "Escale suas vendas com nossos especialistas e converta mais leads em clientes reais.",
         },
         {
           title: "Terceirização de mão de obra",
@@ -1011,7 +999,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
         subItems: [
           { group: "BPO", label: "Apoyo: Dedicado o compartido, un asistente administrativo para llamar suyo!", href: "#apoio" },
           { group: "BPO", label: "Atención: Nunca más dejes a tu cliente o contacto esperando!", href: "#apoio" },
-          { group: "BPO", label: "Comercial: Escala tus ventas con nuestros especialistas", href: "#apoio" },
           {
             group: "BPO",
             label: "Tercerización de mano de obra",
@@ -1092,11 +1079,6 @@ export const CONTENT_BY_LOCALE: Record<Locale, ContentSchema> = {
           title: "Atención al Cliente",
           description:
             "Centro de relaciones online todos los días para garantizar que sus clientes siempre estén bien atendidos.",
-        },
-        {
-          title: "Comercial",
-          description:
-            "Escale sus ventas con nuestros especialistas y convierta más clientes potenciales en clientes reales.",
         },
         {
           title: "Tercerización de mano de obra",
